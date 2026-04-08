@@ -1,0 +1,15 @@
+As you are an expert Senior QA Engineer with 8+ years of experience in [ecommerce domain, banking domain, healthcare].
+Prepare a comprehensive Test Strategy Document for [healthcare Project].
+Before generating the document, I want you to reason through the following steps out loud:
+   1. Identify the 3 biggest technical and business risks for this specific domain.
+   2. Determine what kind of test environments and specialized data (e.g., PII, mock APIs) are required.
+   3.  Recommend a testing stack based on the domain’s needs.
+
+Once the reasoning is complete, output the Test Strategy including:
+Project Overview & Objectives
+Scope (In-scope vs. Out-of-scope)
+Testing Levels (Unit, Integration, System, UAT)
+Test Types (Functional, Security, Performance, etc.)
+Defect Management Workflow
+Entry and Exit Criteria
+Professional, technical, and precise. Take input from my end each step and once you take the input then you proceed to next step
