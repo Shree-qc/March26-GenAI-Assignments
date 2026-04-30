@@ -1,0 +1,93 @@
+import { Page, Locator } from '@playwright/test';
+
+/**
+ * Page Object for Create Lead Form
+ */
+export class CreateLeadFormPage {
+    private readonly page: Page;
+    private readonly form: Locator;
+
+    constructor(page: Page) {
+        this.page = page;
+        this.form = page.locator('#createLeadForm');
+    }
+
+    /**
+     * Fills the company name field.
+     * @param companyName - The name of the company.
+     */
+    async fillCompanyName(companyName: string): Promise<void> {
+        await this.form.locator('input[name="companyName"]').fill(companyName);
+    }
+
+    /**
+     * Fills the first name field.
+     * @param firstName - The first name of the lead.
+     */
+    async fillFirstName(firstName: string): Promise<void> {
+        await this.form.locator('input[name="firstName"]').fill(firstName);
+    }
+
+    /**
+     * Fills the last name field.
+     * @param lastName - The last name of the lead.
+     */
+    async fillLastName(lastName: string): Promise<void> {
+        await this.form.locator('input[name="lastName"]').fill(lastName);
+    }
+
+    /**
+     * Fills the email address field.
+     * @param email - The email address of the lead.
+     */
+    async fillEmail(email: string): Promise<void> {
+        await this.form.locator('input[name="primaryEmail"]').fill(email);
+    }
+
+    /**
+     * Fills the phone number field.
+     * @param phoneNumber - The phone number of the lead.
+     */
+    async fillPhoneNumber(phoneNumber: string): Promise<void> {
+        await this.form.locator('input[name="primaryPhoneNumber"]').fill(phoneNumber);
+    }
+
+    /**
+     * Fills the address line 1 field.
+     * @param addressLine1 - The first line of the address.
+     */
+    async fillAddressLine1(addressLine1: string): Promise<void> {
+        await this.form.locator('input[name="generalAddress1"]').fill(addressLine1);
+    }
+
+    /**
+     * Fills the city field.
+     * @param city - The city of the lead.
+     */
+    async fillCity(city: string): Promise<void> {
+        await this.form.locator('input[name="generalCity"]').fill(city);
+    }
+
+    /**
+     * Fills the postal code field.
+     * @param postalCode - The postal code of the lead.
+     */
+    async fillPostalCode(postalCode: string): Promise<void> {
+        await this.form.locator('input[name="generalPostalCode"]').fill(postalCode);
+    }
+
+    /**
+     * Selects the country from the dropdown.
+     * @param country - The country to select.
+     */
+    async selectCountry(country: string): Promise<void> {
+        await this.form.locator('select[name="generalCountryGeoId"]').selectOption(country);
+    }
+
+    /**
+     * Submits the create lead form.
+     */
+    async submitForm(): Promise<void> {
+        await this.form.locator('input[name="submitButton"]').click();
+    }
+}

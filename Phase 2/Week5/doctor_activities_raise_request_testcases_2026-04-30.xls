@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+  <Worksheet ss:Name="Test Cases">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Test Case ID</Data></Cell>
+        <Cell><Data ss:Type="String">Title</Data></Cell>
+        <Cell><Data ss:Type="String">Category</Data></Cell>
+        <Cell><Data ss:Type="String">Expected Result</Data></Cell>
+        <Cell><Data ss:Type="String">Steps</Data></Cell>
+        <Cell><Data ss:Type="String">Test Data</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-001</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request for Doctor Activities</Data></Cell>
+        <Cell><Data ss:Type="String">Positive</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Enter valid details
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-002</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Invalid Details</Data></Cell>
+        <Cell><Data ss:Type="String">Negative</Data></Cell>
+        <Cell><Data ss:Type="String">Request not raised due to invalid details</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Enter invalid details
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-003</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Mandatory Fields Empty</Data></Cell>
+        <Cell><Data ss:Type="String">Negative</Data></Cell>
+        <Cell><Data ss:Type="String">Request not raised due to empty mandatory fields</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Leave mandatory fields empty
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-004</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Special Characters</Data></Cell>
+        <Cell><Data ss:Type="String">Edge</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully with special characters</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Enter details with special characters
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-005</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Long Details</Data></Cell>
+        <Cell><Data ss:Type="String">Edge</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully with long details</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Enter details with long text
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-006</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Duplicate Details</Data></Cell>
+        <Cell><Data ss:Type="String">Negative</Data></Cell>
+        <Cell><Data ss:Type="String">Request not raised due to duplicate details</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Enter duplicate details
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-007</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Invalid Request Type</Data></Cell>
+        <Cell><Data ss:Type="String">Negative</Data></Cell>
+        <Cell><Data ss:Type="String">Request not raised due to invalid request type</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select invalid request type
+Enter valid details
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-008</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with No Request Type Selected</Data></Cell>
+        <Cell><Data ss:Type="String">Negative</Data></Cell>
+        <Cell><Data ss:Type="String">Request not raised due to no request type selected</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Do not select request type
+Enter valid details
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-009</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Valid Details and Multiple Request Types</Data></Cell>
+        <Cell><Data ss:Type="String">Edge</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully with multiple request types</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select multiple request types
+Enter valid details
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-010</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Invalid Date</Data></Cell>
+        <Cell><Data ss:Type="String">Negative</Data></Cell>
+        <Cell><Data ss:Type="String">Request not raised due to invalid date</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Enter invalid date
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-011</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with No Details Entered</Data></Cell>
+        <Cell><Data ss:Type="String">Negative</Data></Cell>
+        <Cell><Data ss:Type="String">Request not raised due to no details entered</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Do not enter any details
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-012</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Only Mandatory Fields</Data></Cell>
+        <Cell><Data ss:Type="String">Edge</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully with only mandatory fields</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Enter only mandatory fields
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-013</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Zero Values</Data></Cell>
+        <Cell><Data ss:Type="String">Edge</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully with zero values</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Enter zero values
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-014</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Future Date</Data></Cell>
+        <Cell><Data ss:Type="String">Edge</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully with future date</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Enter future date
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-015</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Past Date</Data></Cell>
+        <Cell><Data ss:Type="String">Edge</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully with past date</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Enter past date
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-016</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Same Request Type Multiple Times</Data></Cell>
+        <Cell><Data ss:Type="String">Edge</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully with same request type multiple times</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select same request type multiple times
+Enter valid details
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-017</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Different Request Types</Data></Cell>
+        <Cell><Data ss:Type="String">Edge</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully with different request types</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select different request types
+Enter valid details
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-018</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Long Request Type</Data></Cell>
+        <Cell><Data ss:Type="String">Edge</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully with long request type</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type with long name
+Enter valid details
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-019</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Special Characters in Request Type</Data></Cell>
+        <Cell><Data ss:Type="String">Edge</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully with special characters in request type</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type with special characters
+Enter valid details
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">TC-020</Data></Cell>
+        <Cell><Data ss:Type="String">Raise Request with Very Long Details</Data></Cell>
+        <Cell><Data ss:Type="String">Edge</Data></Cell>
+        <Cell><Data ss:Type="String">Request raised successfully with very long details</Data></Cell>
+        <Cell><Data ss:Type="String">Navigate to Doctor Activities module
+Click on Raise Request button
+Select request type
+Enter very long details
+Submit request</Data></Cell>
+        <Cell><Data ss:Type="String">N/A</Data></Cell>
+      </Row>
+    </Table>
+  </Worksheet>
+</Workbook>

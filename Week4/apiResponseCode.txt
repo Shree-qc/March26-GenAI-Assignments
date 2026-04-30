@@ -1,0 +1,52 @@
+{
+    "message": "OpenAI API request successful, transaction stored.",
+    "transaction": {
+        "createdAt": "2026-04-30T14:12:45.470Z",
+        "id": 114464,
+        "userId": 1285,
+        "created": 1777558354,
+        "model": "ft:gpt-4o-mini-2024-07-18:testleaf-2::DYQZ208E",
+        "modelId": 8,
+        "totalTokens": 5136,
+        "inputTokens": 4338,
+        "outputTokens": 798,
+        "cost": 0.0022589999999999997,
+        "response": {
+            "id": "chatcmpl-DaMPy4fUjNVkDaSfGYw0k1wDghpYt",
+            "object": "chat.completion",
+            "created": 1777558354,
+            "model": "ft:gpt-4o-mini-2024-07-18:testleaf-2::DYQZ208E",
+            "choices": [
+                {
+                    "index": 0,
+                    "message": {
+                        "role": "assistant",
+                        "content": "```typescript\nimport { Page, Locator } from '@playwright/test';\n\n/**\n * Page Object for Create Lead Form\n */\nexport class CreateLeadFormPage {\n    private readonly page: Page;\n    private readonly form: Locator;\n\n    constructor(page: Page) {\n        this.page = page;\n        this.form = page.locator('#createLeadForm');\n    }\n\n    /**\n     * Fills the company name field\n     * @param companyName - The name of the company\n     */\n    async fillCompanyName(companyName: string): Promise<void> {\n        await this.form.locator('input[name=\"companyName\"]').fill(companyName);\n    }\n\n    /**\n     * Fills the parent account field\n     * @param parentAccount - The parent account name\n     */\n    async fillParentAccount(parentAccount: string): Promise<void> {\n        await this.form.locator('input[name=\"parentPartyId\"]').fill(parentAccount);\n    }\n\n    /**\n     * Fills the first name field\n     * @param firstName - The first name\n     */\n    async fillFirstName(firstName: string): Promise<void> {\n        await this.form.locator('input[name=\"firstName\"]').fill(firstName);\n    }\n\n    /**\n     * Fills the last name field\n     * @param lastName - The last name\n     */\n    async fillLastName(lastName: string): Promise<void> {\n        await this.form.locator('input[name=\"lastName\"]').fill(lastName);\n    }\n\n    /**\n     * Selects the source from the dropdown\n     * @param source - The source value\n     */\n    async selectSource(source: string): Promise<void> {\n        await this.form.locator('select[name=\"dataSourceId\"]').selectOption(source);\n    }\n\n    /**\n     * Selects the marketing campaign from the dropdown\n     * @param campaign - The marketing campaign value\n     */\n    async selectMarketingCampaign(campaign: string): Promise<void> {\n        await this.form.locator('select[name=\"marketingCampaignId\"]').selectOption(campaign);\n    }\n\n    /**\n     * Fills the birth date field\n     * @param birthDate - The birth date in dd/MM/yy format\n     */\n    async fillBirthDate(birthDate: string): Promise<void> {\n        await this.form.locator('input[name=\"birthDate\"]').fill(birthDate);\n    }\n\n    /**\n     * Fills the title field\n     * @param title - The title\n     */\n    async fillTitle(title: string): Promise<void> {\n        await this.form.locator('input[name=\"generalProfTitle\"]').fill(title);\n    }\n\n    /**\n     * Fills the department name field\n     * @param department - The department name\n     */\n    async fillDepartment(department: string): Promise<void> {\n        await this.form.locator('input[name=\"departmentName\"]').fill(department);\n    }\n\n    /**\n     * Fills the annual revenue field\n     * @param revenue - The annual revenue\n     */\n    async fillAnnualRevenue(revenue: string): Promise<void> {\n        await this.form.locator('input[name=\"annualRevenue\"]').fill(revenue);\n    }\n\n    /**\n     * Fills the number of employees field\n     * @param number - The number of employees\n     */\n    async fillNumberOfEmployees(number: string): Promise<void> {\n        await this.form.locator('input[name=\"numberEmployees\"]').fill(number);\n    }\n\n    /**\n     * Fills the description field\n     * @param description - The description\n     */\n    async fillDescription(description: string): Promise<void> {\n        await this.form.locator('textarea[name=\"description\"]').fill(description);\n    }\n\n    /**\n     * Submits the create lead form\n     */\n    async submitForm(): Promise<void> {\n        await this.form.locator('input[name=\"submitButton\"]').click();\n    }\n}\n```",
+                        "refusal": null,
+                        "annotations": []
+                    },
+                    "logprobs": null,
+                    "finish_reason": "stop"
+                }
+            ],
+            "usage": {
+                "prompt_tokens": 4338,
+                "completion_tokens": 798,
+                "total_tokens": 5136,
+                "prompt_tokens_details": {
+                    "cached_tokens": 0,
+                    "audio_tokens": 0
+                },
+                "completion_tokens_details": {
+                    "reasoning_tokens": 0,
+                    "audio_tokens": 0,
+                    "accepted_prediction_tokens": 0,
+                    "rejected_prediction_tokens": 0
+                }
+            },
+            "service_tier": "default",
+            "system_fingerprint": "fp_654364d503"
+        },
+        "secretKey": "9wcrzfQjzhGp"
+    }
+}

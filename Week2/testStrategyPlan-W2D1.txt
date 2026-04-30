@@ -12,4 +12,4 @@ Testing Levels (Unit, Integration, System, UAT)
 Test Types (Functional, Security, Performance, etc.)
 Defect Management Workflow
 Entry and Exit Criteria
-Professional, technical, and precise. Take input from my end each step and once you take the input then you proceed to next step
+Professional, technical, and precise.

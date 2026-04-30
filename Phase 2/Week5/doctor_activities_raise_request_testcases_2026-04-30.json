@@ -1,0 +1,307 @@
+{
+  "cases": [
+    {
+      "id": "TC-001",
+      "title": "Raise Request for Doctor Activities",
+      "priority": "High",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Enter valid details",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully",
+      "category": "Positive"
+    },
+    {
+      "id": "TC-002",
+      "title": "Raise Request with Invalid Details",
+      "priority": "High",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Enter invalid details",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request not raised due to invalid details",
+      "category": "Negative"
+    },
+    {
+      "id": "TC-003",
+      "title": "Raise Request with Mandatory Fields Empty",
+      "priority": "High",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Leave mandatory fields empty",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request not raised due to empty mandatory fields",
+      "category": "Negative"
+    },
+    {
+      "id": "TC-004",
+      "title": "Raise Request with Special Characters",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Enter details with special characters",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully with special characters",
+      "category": "Edge"
+    },
+    {
+      "id": "TC-005",
+      "title": "Raise Request with Long Details",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Enter details with long text",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully with long details",
+      "category": "Edge"
+    },
+    {
+      "id": "TC-006",
+      "title": "Raise Request with Duplicate Details",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Enter duplicate details",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request not raised due to duplicate details",
+      "category": "Negative"
+    },
+    {
+      "id": "TC-007",
+      "title": "Raise Request with Invalid Request Type",
+      "priority": "High",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select invalid request type",
+        "Enter valid details",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request not raised due to invalid request type",
+      "category": "Negative"
+    },
+    {
+      "id": "TC-008",
+      "title": "Raise Request with No Request Type Selected",
+      "priority": "High",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Do not select request type",
+        "Enter valid details",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request not raised due to no request type selected",
+      "category": "Negative"
+    },
+    {
+      "id": "TC-009",
+      "title": "Raise Request with Valid Details and Multiple Request Types",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select multiple request types",
+        "Enter valid details",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully with multiple request types",
+      "category": "Edge"
+    },
+    {
+      "id": "TC-010",
+      "title": "Raise Request with Invalid Date",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Enter invalid date",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request not raised due to invalid date",
+      "category": "Negative"
+    },
+    {
+      "id": "TC-011",
+      "title": "Raise Request with No Details Entered",
+      "priority": "High",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Do not enter any details",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request not raised due to no details entered",
+      "category": "Negative"
+    },
+    {
+      "id": "TC-012",
+      "title": "Raise Request with Only Mandatory Fields",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Enter only mandatory fields",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully with only mandatory fields",
+      "category": "Edge"
+    },
+    {
+      "id": "TC-013",
+      "title": "Raise Request with Zero Values",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Enter zero values",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully with zero values",
+      "category": "Edge"
+    },
+    {
+      "id": "TC-014",
+      "title": "Raise Request with Future Date",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Enter future date",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully with future date",
+      "category": "Edge"
+    },
+    {
+      "id": "TC-015",
+      "title": "Raise Request with Past Date",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Enter past date",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully with past date",
+      "category": "Edge"
+    },
+    {
+      "id": "TC-016",
+      "title": "Raise Request with Same Request Type Multiple Times",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select same request type multiple times",
+        "Enter valid details",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully with same request type multiple times",
+      "category": "Edge"
+    },
+    {
+      "id": "TC-017",
+      "title": "Raise Request with Different Request Types",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select different request types",
+        "Enter valid details",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully with different request types",
+      "category": "Edge"
+    },
+    {
+      "id": "TC-018",
+      "title": "Raise Request with Long Request Type",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type with long name",
+        "Enter valid details",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully with long request type",
+      "category": "Edge"
+    },
+    {
+      "id": "TC-019",
+      "title": "Raise Request with Special Characters in Request Type",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type with special characters",
+        "Enter valid details",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully with special characters in request type",
+      "category": "Edge"
+    },
+    {
+      "id": "TC-020",
+      "title": "Raise Request with Very Long Details",
+      "priority": "Medium",
+      "steps": [
+        "Navigate to Doctor Activities module",
+        "Click on Raise Request button",
+        "Select request type",
+        "Enter very long details",
+        "Submit request"
+      ],
+      "testData": "",
+      "expectedResult": "Request raised successfully with very long details",
+      "category": "Edge"
+    }
+  ],
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "promptTokens": 1071,
+  "completionTokens": 1878
+}

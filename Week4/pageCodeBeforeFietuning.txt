@@ -1,0 +1,394 @@
+import { Page, Locator } from '@playwright/test';
+
+/**
+ * Page Object representing the "Create Lead" form.
+ * Provides methods to interact with each field and submit the form.
+ */
+export class CreateLeadPage {
+  private readonly page: Page;
+
+  constructor(page: Page) {
+    this.page = page;
+  }
+
+  // -------------------------------------------------------------------------
+  // Locators
+  // -------------------------------------------------------------------------
+
+  private get companyName(): Locator {
+    return this.page.locator('#createLeadForm_companyName');
+  }
+
+  private get parentAccount(): Locator {
+    return this.page.locator('#createLeadForm_parentPartyId');
+  }
+
+  private get parentAccountLookup(): Locator {
+    return this.page.locator('#createLeadForm_parentPartyId + a img');
+  }
+
+  private get firstName(): Locator {
+    return this.page.locator('#createLeadForm_firstName');
+  }
+
+  private get lastName(): Locator {
+    return this.page.locator('#createLeadForm_lastName');
+  }
+
+  private get sourceSelect(): Locator {
+    return this.page.locator('#createLeadForm_dataSourceId');
+  }
+
+  private get marketingCampaignSelect(): Locator {
+    return this.page.locator('#createLeadForm_marketingCampaignId');
+  }
+
+  private get firstNameLocal(): Locator {
+    return this.page.locator('#createLeadForm_firstNameLocal');
+  }
+
+  private get lastNameLocal(): Locator {
+    return this.page.locator('#createLeadForm_lastNameLocal');
+  }
+
+  private get salutation(): Locator {
+    return this.page.locator('#createLeadForm_personalTitle');
+  }
+
+  private get birthDate(): Locator {
+    return this.page.locator('#createLeadForm_birthDate');
+  }
+
+  private get title(): Locator {
+    return this.page.locator('#createLeadForm_generalProfTitle');
+  }
+
+  private get department(): Locator {
+    return this.page.locator('#createLeadForm_departmentName');
+  }
+
+  private get annualRevenue(): Locator {
+    return this.page.locator('#createLeadForm_annualRevenue');
+  }
+
+  private get currencySelect(): Locator {
+    return this.page.locator('#createLeadForm_currencyUomId');
+  }
+
+  private get industrySelect(): Locator {
+    return this.page.locator('#createLeadForm_industryEnumId');
+  }
+
+  private get numberOfEmployees(): Locator {
+    return this.page.locator('#createLeadForm_numberEmployees');
+  }
+
+  private get ownershipSelect(): Locator {
+    return this.page.locator('#createLeadForm_ownershipEnumId');
+  }
+
+  private get sicCode(): Locator {
+    return this.page.locator('#createLeadForm_sicCode');
+  }
+
+  private get tickerSymbol(): Locator {
+    return this.page.locator('#createLeadForm_tickerSymbol');
+  }
+
+  private get description(): Locator {
+    return this.page.locator('#createLeadForm_description');
+  }
+
+  private get importantNote(): Locator {
+    return this.page.locator('#createLeadForm_importantNote');
+  }
+
+  private get countryCode(): Locator {
+    return this.page.locator('#createLeadForm_primaryPhoneCountryCode');
+  }
+
+  private get areaCode(): Locator {
+    return this.page.locator('#createLeadForm_primaryPhoneAreaCode');
+  }
+
+  private get phoneNumber(): Locator {
+    return this.page.locator('#createLeadForm_primaryPhoneNumber');
+  }
+
+  private get phoneExtension(): Locator {
+    return this.page.locator('#createLeadForm_primaryPhoneExtension');
+  }
+
+  private get askForName(): Locator {
+    return this.page.locator('#createLeadForm_primaryPhoneAskForName');
+  }
+
+  private get email(): Locator {
+    return this.page.locator('#createLeadForm_primaryEmail');
+  }
+
+  private get webUrl(): Locator {
+    return this.page.locator('#createLeadForm_primaryWebUrl');
+  }
+
+  private get toName(): Locator {
+    return this.page.locator('#createLeadForm_generalToName');
+  }
+
+  private get attentionName(): Locator {
+    return this.page.locator('#createLeadForm_generalAttnName');
+  }
+
+  private get address1(): Locator {
+    return this.page.locator('#createLeadForm_generalAddress1');
+  }
+
+  private get address2(): Locator {
+    return this.page.locator('#createLeadForm_generalAddress2');
+  }
+
+  private get city(): Locator {
+    return this.page.locator('#createLeadForm_generalCity');
+  }
+
+  private get stateSelect(): Locator {
+    return this.page.locator('#createLeadForm_generalStateProvinceGeoId');
+  }
+
+  private get postalCode(): Locator {
+    return this.page.locator('#createLeadForm_generalPostalCode');
+  }
+
+  private get countrySelect(): Locator {
+    return this.page.locator('#createLeadForm_generalCountryGeoId');
+  }
+
+  private get postalCodeExt(): Locator {
+    return this.page.locator('#createLeadForm_generalPostalCodeExt');
+  }
+
+  private get submitButton(): Locator {
+    return this.page.locator('input[type="submit"][value="Create Lead"]');
+  }
+
+  // -------------------------------------------------------------------------
+  // Interaction methods
+  // -------------------------------------------------------------------------
+
+  /** Fill the Company Name field. */
+  async setCompanyName(name: string): Promise<void> {
+    await this.companyName.fill(name);
+  }
+
+  /** Fill the Parent Account field. */
+  async setParentAccount(accountId: string): Promise<void> {
+    await this.parentAccount.fill(accountId);
+  }
+
+  /** Click the lookup icon next to Parent Account. */
+  async clickParentAccountLookup(): Promise<void> {
+    await this.parentAccountLookup.click();
+  }
+
+  /** Fill the First Name field. */
+  async setFirstName(firstName: string): Promise<void> {
+    await this.firstName.fill(firstName);
+  }
+
+  /** Fill the Last Name field. */
+  async setLastName(lastName: string): Promise<void> {
+    await this.lastName.fill(lastName);
+  }
+
+  /** Select a value from the Source dropdown. */
+  async selectSource(sourceValue: string): Promise<void> {
+    await this.sourceSelect.selectOption(sourceValue);
+  }
+
+  /** Select a value from the Marketing Campaign dropdown. */
+  async selectMarketingCampaign(campaignValue: string): Promise<void> {
+    await this.marketingCampaignSelect.selectOption(campaignValue);
+  }
+
+  /** Fill the First Name (Local) field. */
+  async setFirstNameLocal(name: string): Promise<void> {
+    await this.firstNameLocal.fill(name);
+  }
+
+  /** Fill the Last Name (Local) field. */
+  async setLastNameLocal(name: string): Promise<void> {
+    await this.lastNameLocal.fill(name);
+  }
+
+  /** Fill the Salutation (Personal Title) field. */
+  async setSalutation(salutation: string): Promise<void> {
+    await this.salutation.fill(salutation);
+  }
+
+  /**
+   * Set the Birth Date.
+   * Accepts a string in the format `dd/MM/yy` as required by the input.
+   */
+  async setBirthDate(date: string): Promise<void> {
+    await this.birthDate.fill(date);
+  }
+
+  /** Fill the Title (Professional Title) field. */
+  async setTitle(title: string): Promise<void> {
+    await this.title.fill(title);
+  }
+
+  /** Fill the Department field. */
+  async setDepartment(dept: string): Promise<void> {
+    await this.department.fill(dept);
+  }
+
+  /** Fill the Annual Revenue field. */
+  async setAnnualRevenue(amount: string): Promise<void> {
+    await this.annualRevenue.fill(amount);
+  }
+
+  /** Select a currency from the Preferred Currency dropdown. */
+  async selectPreferredCurrency(currencyCode: string): Promise<void> {
+    await this.currencySelect.selectOption(currencyCode);
+  }
+
+  /** Select an industry from the Industry dropdown. */
+  async selectIndustry(industryId: string): Promise<void> {
+    await this.industrySelect.selectOption(industryId);
+  }
+
+  /** Fill the Number Of Employees field. */
+  async setNumberOfEmployees(count: string): Promise<void> {
+    await this.numberOfEmployees.fill(count);
+  }
+
+  /** Select an ownership type from the Ownership dropdown. */
+  async selectOwnership(ownershipId: string): Promise<void> {
+    await this.ownershipSelect.selectOption(ownershipId);
+  }
+
+  /** Fill the SIC Code field. */
+  async setSicCode(code: string): Promise<void> {
+    await this.sicCode.fill(code);
+  }
+
+  /** Fill the Ticker Symbol field. */
+  async setTickerSymbol(symbol: string): Promise<void> {
+    await this.tickerSymbol.fill(symbol);
+  }
+
+  /** Fill the Description textarea. */
+  async setDescription(text: string): Promise<void> {
+    await this.description.fill(text);
+  }
+
+  /** Fill the Important Note textarea. */
+  async setImportantNote(text: string): Promise<void> {
+    await this.importantNote.fill(text);
+  }
+
+  /** Fill the Country Code for the primary phone. */
+  async setCountryCode(code: string): Promise<void> {
+    await this.countryCode.fill(code);
+  }
+
+  /** Fill the Area Code for the primary phone. */
+  async setAreaCode(code: string): Promise<void> {
+    await this.areaCode.fill(code);
+  }
+
+  /** Fill the Phone Number for the primary phone. */
+  async setPhoneNumber(number: string): Promise<void> {
+    await this.phoneNumber.fill(number);
+  }
+
+  /** Fill the Phone Extension. */
+  async setPhoneExtension(ext: string): Promise<void> {
+    await this.phoneExtension.fill(ext);
+  }
+
+  /** Fill the "Person to Ask For" field. */
+  async setAskForName(name: string): Promise<void> {
+    await this.askForName.fill(name);
+  }
+
+  /** Fill the primary e‑mail address. */
+  async setEmail(email: string): Promise<void> {
+    await this.email.fill(email);
+  }
+
+  /** Fill the primary web URL. */
+  async setWebUrl(url: string): Promise<void> {
+    await this.webUrl.fill(url);
+  }
+
+  /** Fill the "To Name" field of the primary address. */
+  async setToName(name: string): Promise<void> {
+    await this.toName.fill(name);
+  }
+
+  /** Fill the "Attention Name" field of the primary address. */
+  async setAttentionName(name: string): Promise<void> {
+    await this.attentionName.fill(name);
+  }
+
+  /** Fill Address Line 1. */
+  async setAddressLine1(line: string): Promise<void> {
+    await this.address1.fill(line);
+  }
+
+  /** Fill Address Line 2. */
+  async setAddressLine2(line: string): Promise<void> {
+    await this.address2.fill(line);
+  }
+
+  /** Fill the City field. */
+  async setCity(city: string): Promise<void> {
+    await this.city.fill(city);
+  }
+
+  /** Select a state/province from the dropdown. */
+  async selectStateProvince(stateId: string): Promise<void> {
+    await this.stateSelect.selectOption(stateId);
+  }
+
+  /** Fill the Postal Code field. */
+  async setPostalCode(code: string): Promise<void> {
+    await this.postalCode.fill(code);
+  }
+
+  /** Select a country from the Country dropdown. */
+  async selectCountry(countryId: string): Promise<void> {
+    await this.countrySelect.selectOption(countryId);
+  }
+
+  /** Fill the Postal Code Extension field. */
+  async setPostalCodeExtension(ext: string): Promise<void> {
+    await this.postalCodeExt.fill(ext);
+  }
+
+  /** Click the "Create Lead" submit button. */
+  async submit(): Promise<void> {
+    await this.submitButton.click();
+  }
+
+  /**
+   * Convenience method to fill the minimal required fields and submit.
+   * Adjust as needed for your test scenarios.
+   */
+  async createLead(data: {
+    companyName: string;
+    firstName: string;
+    lastName: string;
+    primaryEmail?: string;
+  }): Promise<void> {
+    await this.setCompanyName(data.companyName);
+    await this.setFirstName(data.firstName);
+    await this.setLastName(data.lastName);
+    if (data.primaryEmail) {
+      await this.setEmail(data.primaryEmail);
+    }
+    await this.submit();
+  }
+}
