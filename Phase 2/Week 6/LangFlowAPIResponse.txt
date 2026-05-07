@@ -1,0 +1,127 @@
+{
+    "session_id": "8a6e37e0-f8fc-4028-a6f8-25a7eaf52e87",
+    "outputs": [
+        {
+            "inputs": {
+                "input_value": "generate the testcases for fund transfer"
+            },
+            "outputs": [
+                {
+                    "results": {
+                        "message": {
+                            "text_key": "text",
+                            "data": {
+                                "timestamp": "2026-05-07 14:30:48 UTC",
+                                "sender": "Machine",
+                                "sender_name": "AI",
+                                "session_id": "8a6e37e0-f8fc-4028-a6f8-25a7eaf52e87",
+                                "context_id": "",
+                                "text": "Test Case ID: TC_FT_001\nTitle: Verify successful fund transfer within daily limit\nPreconditions: User is logged in, has sufficient balance, daily transfer limit not reached, beneficiary is saved\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Select the saved beneficiary.\n3. Enter an amount that is within the daily transfer limit.\n4. Click “Proceed”.\n5. Enter the correct OTP received on the registered mobile number.\n6. Confirm the transaction.\nExpected Result: Transaction is processed successfully, a confirmation screen with transaction reference number is displayed, and the account balance is updated accordingly.\n\nTest Case ID: TC_FT_002\nTitle: Attempt fund transfer exceeding daily limit\nPreconditions: User is logged in, has sufficient balance, daily transfer limit already reached or amount entered exceeds remaining limit\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Select a beneficiary.\n3. Enter an amount that exceeds the remaining daily transfer limit.\n4. Click “Proceed”.\nExpected Result: System displays an error message indicating that the transfer amount exceeds the daily limit and prevents further processing.\n\nTest Case ID: TC_FT_003\nTitle: Attempt fund transfer with insufficient account balance\nPreconditions: User is logged in, account balance is lower than the transfer amount, daily limit not exceeded\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Select a beneficiary.\n3. Enter an amount greater than the available account balance.\n4. Click “Proceed”.\n5. Enter the correct OTP.\nExpected Result: System shows an “Insufficient funds” error after OTP entry and aborts the transaction; no funds are debited.\n\nTest Case ID: TC_FT_004\nTitle: Validate error handling for invalid beneficiary account number\nPreconditions: User is logged in, beneficiary account number is not in the system or incorrectly formatted\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Manually enter an invalid beneficiary account number.\n3. Enter a valid transfer amount within limits.\n4. Click “Proceed”.\nExpected Result: System validates the beneficiary details and displays an error message such as “Invalid beneficiary account number” without proceeding to OTP verification.\n\nTest Case ID: TC_FT_005\nTitle: Verify OTP timeout and retry mechanism during fund transfer\nPreconditions: User is logged in, has sufficient balance, beneficiary is valid, OTP service is operational\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Select a beneficiary.\n3. Enter a valid transfer amount within limits.\n4. Click “Proceed”.\n5. Wait for the OTP validity period to expire without entering the OTP.\n6. Attempt to enter the expired OTP.\n7. Click “Resend OTP”.\n8. Enter the newly received OTP within its validity period.\n9. Confirm the transaction.\nExpected Result: Initial OTP entry fails with a timeout error, the system allows OTP resend, and upon entering the new valid OTP, the transaction completes successfully with a confirmation screen.",
+                                "files": [],
+                                "error": false,
+                                "edit": false,
+                                "properties": {
+                                    "text_color": null,
+                                    "background_color": null,
+                                    "edited": false,
+                                    "source": {
+                                        "id": "GroqModel-HmYMe",
+                                        "display_name": "Groq",
+                                        "source": "openai/gpt-oss-120b"
+                                    },
+                                    "icon": null,
+                                    "allow_markdown": false,
+                                    "positive_feedback": null,
+                                    "state": "complete",
+                                    "targets": [],
+                                    "usage": {
+                                        "input_tokens": 572,
+                                        "output_tokens": 763,
+                                        "total_tokens": 1335
+                                    },
+                                    "build_duration": null
+                                },
+                                "category": "message",
+                                "content_blocks": [],
+                                "id": "017e5744-d010-4eca-9872-a2a5d1512124",
+                                "flow_id": "8a6e37e0-f8fc-4028-a6f8-25a7eaf52e87",
+                                "session_metadata": null,
+                                "duration": null
+                            },
+                            "default_value": "",
+                            "text": "Test Case ID: TC_FT_001\nTitle: Verify successful fund transfer within daily limit\nPreconditions: User is logged in, has sufficient balance, daily transfer limit not reached, beneficiary is saved\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Select the saved beneficiary.\n3. Enter an amount that is within the daily transfer limit.\n4. Click “Proceed”.\n5. Enter the correct OTP received on the registered mobile number.\n6. Confirm the transaction.\nExpected Result: Transaction is processed successfully, a confirmation screen with transaction reference number is displayed, and the account balance is updated accordingly.\n\nTest Case ID: TC_FT_002\nTitle: Attempt fund transfer exceeding daily limit\nPreconditions: User is logged in, has sufficient balance, daily transfer limit already reached or amount entered exceeds remaining limit\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Select a beneficiary.\n3. Enter an amount that exceeds the remaining daily transfer limit.\n4. Click “Proceed”.\nExpected Result: System displays an error message indicating that the transfer amount exceeds the daily limit and prevents further processing.\n\nTest Case ID: TC_FT_003\nTitle: Attempt fund transfer with insufficient account balance\nPreconditions: User is logged in, account balance is lower than the transfer amount, daily limit not exceeded\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Select a beneficiary.\n3. Enter an amount greater than the available account balance.\n4. Click “Proceed”.\n5. Enter the correct OTP.\nExpected Result: System shows an “Insufficient funds” error after OTP entry and aborts the transaction; no funds are debited.\n\nTest Case ID: TC_FT_004\nTitle: Validate error handling for invalid beneficiary account number\nPreconditions: User is logged in, beneficiary account number is not in the system or incorrectly formatted\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Manually enter an invalid beneficiary account number.\n3. Enter a valid transfer amount within limits.\n4. Click “Proceed”.\nExpected Result: System validates the beneficiary details and displays an error message such as “Invalid beneficiary account number” without proceeding to OTP verification.\n\nTest Case ID: TC_FT_005\nTitle: Verify OTP timeout and retry mechanism during fund transfer\nPreconditions: User is logged in, has sufficient balance, beneficiary is valid, OTP service is operational\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Select a beneficiary.\n3. Enter a valid transfer amount within limits.\n4. Click “Proceed”.\n5. Wait for the OTP validity period to expire without entering the OTP.\n6. Attempt to enter the expired OTP.\n7. Click “Resend OTP”.\n8. Enter the newly received OTP within its validity period.\n9. Confirm the transaction.\nExpected Result: Initial OTP entry fails with a timeout error, the system allows OTP resend, and upon entering the new valid OTP, the transaction completes successfully with a confirmation screen.",
+                            "sender": "Machine",
+                            "sender_name": "AI",
+                            "files": [],
+                            "session_id": "8a6e37e0-f8fc-4028-a6f8-25a7eaf52e87",
+                            "context_id": "",
+                            "timestamp": "2026-05-07T14:30:48+00:00",
+                            "flow_id": "8a6e37e0-f8fc-4028-a6f8-25a7eaf52e87",
+                            "error": false,
+                            "edit": false,
+                            "properties": {
+                                "text_color": null,
+                                "background_color": null,
+                                "edited": false,
+                                "source": {
+                                    "id": "GroqModel-HmYMe",
+                                    "display_name": "Groq",
+                                    "source": "openai/gpt-oss-120b"
+                                },
+                                "icon": null,
+                                "allow_markdown": false,
+                                "positive_feedback": null,
+                                "state": "complete",
+                                "targets": [],
+                                "usage": {
+                                    "input_tokens": 572,
+                                    "output_tokens": 763,
+                                    "total_tokens": 1335
+                                },
+                                "build_duration": null
+                            },
+                            "category": "message",
+                            "content_blocks": [],
+                            "duration": null,
+                            "session_metadata": null
+                        }
+                    },
+                    "artifacts": {
+                        "message": "Test Case ID: TC_FT_001\n\nTitle: Verify successful fund transfer within daily limit\n\nPreconditions: User is logged in, has sufficient balance, daily transfer limit not reached, beneficiary is saved\n\nSteps:\n\n1. Navigate to the Fund Transfer page.\n\n2. Select the saved beneficiary.\n\n3. Enter an amount that is within the daily transfer limit.\n\n4. Click “Proceed”.\n\n5. Enter the correct OTP received on the registered mobile number.\n\n6. Confirm the transaction.\n\nExpected Result: Transaction is processed successfully, a confirmation screen with transaction reference number is displayed, and the account balance is updated accordingly.\n\nTest Case ID: TC_FT_002\n\nTitle: Attempt fund transfer exceeding daily limit\n\nPreconditions: User is logged in, has sufficient balance, daily transfer limit already reached or amount entered exceeds remaining limit\n\nSteps:\n\n1. Navigate to the Fund Transfer page.\n\n2. Select a beneficiary.\n\n3. Enter an amount that exceeds the remaining daily transfer limit.\n\n4. Click “Proceed”.\n\nExpected Result: System displays an error message indicating that the transfer amount exceeds the daily limit and prevents further processing.\n\nTest Case ID: TC_FT_003\n\nTitle: Attempt fund transfer with insufficient account balance\n\nPreconditions: User is logged in, account balance is lower than the transfer amount, daily limit not exceeded\n\nSteps:\n\n1. Navigate to the Fund Transfer page.\n\n2. Select a beneficiary.\n\n3. Enter an amount greater than the available account balance.\n\n4. Click “Proceed”.\n\n5. Enter the correct OTP.\n\nExpected Result: System shows an “Insufficient funds” error after OTP entry and aborts the transaction; no funds are debited.\n\nTest Case ID: TC_FT_004\n\nTitle: Validate error handling for invalid beneficiary account number\n\nPreconditions: User is logged in, beneficiary account number is not in the system or incorrectly formatted\n\nSteps:\n\n1. Navigate to the Fund Transfer page.\n\n2. Manually enter an invalid beneficiary account number.\n\n3. Enter a valid transfer amount within limits.\n\n4. Click “Proceed”.\n\nExpected Result: System validates the beneficiary details and displays an error message such as “Invalid beneficiary account number” without proceeding to OTP verification.\n\nTest Case ID: TC_FT_005\n\nTitle: Verify OTP timeout and retry mechanism during fund transfer\n\nPreconditions: User is logged in, has sufficient balance, beneficiary is valid, OTP service is operational\n\nSteps:\n\n1. Navigate to the Fund Transfer page.\n\n2. Select a beneficiary.\n\n3. Enter a valid transfer amount within limits.\n\n4. Click “Proceed”.\n\n5. Wait for the OTP validity period to expire without entering the OTP.\n\n6. Attempt to enter the expired OTP.\n\n7. Click “Resend OTP”.\n\n8. Enter the newly received OTP within its validity period.\n\n9. Confirm the transaction.\n\nExpected Result: Initial OTP entry fails with a timeout error, the system allows OTP resend, and upon entering the new valid OTP, the transaction completes successfully with a confirmation screen.",
+                        "sender": "Machine",
+                        "sender_name": "AI",
+                        "files": [],
+                        "type": "object"
+                    },
+                    "outputs": {
+                        "message": {
+                            "message": "Test Case ID: TC_FT_001\nTitle: Verify successful fund transfer within daily limit\nPreconditions: User is logged in, has sufficient balance, daily transfer limit not reached, beneficiary is saved\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Select the saved beneficiary.\n3. Enter an amount that is within the daily transfer limit.\n4. Click “Proceed”.\n5. Enter the correct OTP received on the registered mobile number.\n6. Confirm the transaction.\nExpected Result: Transaction is processed successfully, a confirmation screen with transaction reference number is displayed, and the account balance is updated accordingly.\n\nTest Case ID: TC_FT_002\nTitle: Attempt fund transfer exceeding daily limit\nPreconditions: User is logged in, has sufficient balance, daily transfer limit already reached or amount entered exceeds remaining limit\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Select a beneficiary.\n3. Enter an amount that exceeds the remaining daily transfer limit.\n4. Click “Proceed”.\nExpected Result: System displays an error message indicating that the transfer amount exceeds the daily limit and prevents further processing.\n\nTest Case ID: TC_FT_003\nTitle: Attempt fund transfer with insufficient account balance\nPreconditions: User is logged in, account balance is lower than the transfer amount, daily limit not exceeded\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Select a beneficiary.\n3. Enter an amount greater than the available account balance.\n4. Click “Proceed”.\n5. Enter the correct OTP.\nExpected Result: System shows an “Insufficient funds” error after OTP entry and aborts the transaction; no funds are debited.\n\nTest Case ID: TC_FT_004\nTitle: Validate error handling for invalid beneficiary account number\nPreconditions: User is logged in, beneficiary account number is not in the system or incorrectly formatted\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Manually enter an invalid beneficiary account number.\n3. Enter a valid transfer amount within limits.\n4. Click “Proceed”.\nExpected Result: System validates the beneficiary details and displays an error message such as “Invalid beneficiary account number” without proceeding to OTP verification.\n\nTest Case ID: TC_FT_005\nTitle: Verify OTP timeout and retry mechanism during fund transfer\nPreconditions: User is logged in, has sufficient balance, beneficiary is valid, OTP service is operational\nSteps:\n1. Navigate to the Fund Transfer page.\n2. Select a beneficiary.\n3. Enter a valid transfer amount within limits.\n4. Click “Proceed”.\n5. Wait for the OTP validity period to expire without entering the OTP.\n6. Attempt to enter the expired OTP.\n7. Click “Resend OTP”.\n8. Enter the newly received OTP within its validity period.\n9. Confirm the transaction.\nExpected Result: Initial OTP entry fails with a timeout error, the system allows OTP resend, and upon entering the new valid OTP, the transaction completes successfully with a confirmation screen.",
+                            "type": "text"
+                        }
+                    },
+                    "logs": {
+                        "message": []
+                    },
+                    "messages": [
+                        {
+                            "message": "Test Case ID: TC_FT_001\n\nTitle: Verify successful fund transfer within daily limit\n\nPreconditions: User is logged in, has sufficient balance, daily transfer limit not reached, beneficiary is saved\n\nSteps:\n\n1. Navigate to the Fund Transfer page.\n\n2. Select the saved beneficiary.\n\n3. Enter an amount that is within the daily transfer limit.\n\n4. Click “Proceed”.\n\n5. Enter the correct OTP received on the registered mobile number.\n\n6. Confirm the transaction.\n\nExpected Result: Transaction is processed successfully, a confirmation screen with transaction reference number is displayed, and the account balance is updated accordingly.\n\nTest Case ID: TC_FT_002\n\nTitle: Attempt fund transfer exceeding daily limit\n\nPreconditions: User is logged in, has sufficient balance, daily transfer limit already reached or amount entered exceeds remaining limit\n\nSteps:\n\n1. Navigate to the Fund Transfer page.\n\n2. Select a beneficiary.\n\n3. Enter an amount that exceeds the remaining daily transfer limit.\n\n4. Click “Proceed”.\n\nExpected Result: System displays an error message indicating that the transfer amount exceeds the daily limit and prevents further processing.\n\nTest Case ID: TC_FT_003\n\nTitle: Attempt fund transfer with insufficient account balance\n\nPreconditions: User is logged in, account balance is lower than the transfer amount, daily limit not exceeded\n\nSteps:\n\n1. Navigate to the Fund Transfer page.\n\n2. Select a beneficiary.\n\n3. Enter an amount greater than the available account balance.\n\n4. Click “Proceed”.\n\n5. Enter the correct OTP.\n\nExpected Result: System shows an “Insufficient funds” error after OTP entry and aborts the transaction; no funds are debited.\n\nTest Case ID: TC_FT_004\n\nTitle: Validate error handling for invalid beneficiary account number\n\nPreconditions: User is logged in, beneficiary account number is not in the system or incorrectly formatted\n\nSteps:\n\n1. Navigate to the Fund Transfer page.\n\n2. Manually enter an invalid beneficiary account number.\n\n3. Enter a valid transfer amount within limits.\n\n4. Click “Proceed”.\n\nExpected Result: System validates the beneficiary details and displays an error message such as “Invalid beneficiary account number” without proceeding to OTP verification.\n\nTest Case ID: TC_FT_005\n\nTitle: Verify OTP timeout and retry mechanism during fund transfer\n\nPreconditions: User is logged in, has sufficient balance, beneficiary is valid, OTP service is operational\n\nSteps:\n\n1. Navigate to the Fund Transfer page.\n\n2. Select a beneficiary.\n\n3. Enter a valid transfer amount within limits.\n\n4. Click “Proceed”.\n\n5. Wait for the OTP validity period to expire without entering the OTP.\n\n6. Attempt to enter the expired OTP.\n\n7. Click “Resend OTP”.\n\n8. Enter the newly received OTP within its validity period.\n\n9. Confirm the transaction.\n\nExpected Result: Initial OTP entry fails with a timeout error, the system allows OTP resend, and upon entering the new valid OTP, the transaction completes successfully with a confirmation screen.",
+                            "sender": "Machine",
+                            "sender_name": "AI",
+                            "session_id": "8a6e37e0-f8fc-4028-a6f8-25a7eaf52e87",
+                            "stream_url": null,
+                            "component_id": "ChatOutput-0av2q",
+                            "files": [],
+                            "type": "text"
+                        }
+                    ],
+                    "timedelta": null,
+                    "duration": null,
+                    "component_display_name": "Chat Output",
+                    "component_id": "ChatOutput-0av2q",
+                    "used_frozen_result": false,
+                    "token_usage": null
+                }
+            ]
+        }
+    ]
+}

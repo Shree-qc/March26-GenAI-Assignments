@@ -1,0 +1,127 @@
+{
+    "session_id": "8a6e37e0-f8fc-4028-a6f8-25a7eaf52e87",
+    "outputs": [
+        {
+            "inputs": {
+                "input_value": "Generate the testcases for fund transfer!"
+            },
+            "outputs": [
+                {
+                    "results": {
+                        "message": {
+                            "text_key": "text",
+                            "data": {
+                                "timestamp": "2026-05-07 14:32:41 UTC",
+                                "sender": "Machine",
+                                "sender_name": "AI",
+                                "session_id": "8a6e37e0-f8fc-4028-a6f8-25a7eaf52e87",
+                                "context_id": "",
+                                "text": "Test Case ID: TC_FT_001  \nTitle: Verify successful fund transfer within daily limit  \nPreconditions: User is logged in, has sufficient balance, daily transfer limit not reached, beneficiary is saved and active  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Select the saved beneficiary.  \n3. Enter an amount that is within the user's remaining daily transfer limit.  \n4. Click “Proceed”.  \n5. Enter the OTP received on the registered mobile number.  \n6. Confirm the transaction.  \nExpected Result: Transaction is processed successfully, a confirmation screen with transaction reference is displayed, and the account balance is debited accordingly.  \n\nTest Case ID: TC_FT_002  \nTitle: Verify fund transfer is blocked when amount exceeds daily limit  \nPreconditions: User is logged in, has sufficient balance, daily transfer limit already reached or amount entered exceeds remaining limit, beneficiary is saved and active  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Select the saved beneficiary.  \n3. Enter an amount greater than the remaining daily transfer limit.  \n4. Click “Proceed”.  \nExpected Result: System displays an error message such as “Transfer amount exceeds daily limit” and prevents further steps; no OTP is sent.  \n\nTest Case ID: TC_FT_003  \nTitle: Verify fund transfer fails with insufficient account balance  \nPreconditions: User is logged in, account balance is lower than the transfer amount, daily limit not exceeded, beneficiary is saved and active  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Select the saved beneficiary.  \n3. Enter an amount greater than the available account balance.  \n4. Click “Proceed”.  \n5. Enter the OTP received on the registered mobile number.  \n6. Confirm the transaction.  \nExpected Result: After OTP entry, system displays an error “Insufficient funds” and aborts the transaction; no debit occurs.  \n\nTest Case ID: TC_FT_004  \nTitle: Verify validation error for invalid beneficiary account number  \nPreconditions: User is logged in, has sufficient balance, daily limit not exceeded  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Choose “Add New Beneficiary”.  \n3. Enter an invalid account number (e.g., wrong length or non‑numeric characters).  \n4. Fill other required fields (bank name, IFSC, beneficiary name).  \n5. Click “Save”.  \nExpected Result: System validates the account number format and displays an error message such as “Invalid account number”; beneficiary is not saved and transfer cannot proceed.  \n\nTest Case ID: TC_FT_005  \nTitle: Verify system handles network timeout during fund transfer processing  \nPreconditions: User is logged in, has sufficient balance, daily limit not exceeded, beneficiary is saved and active, simulated network latency introduced  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Select the saved beneficiary.  \n3. Enter a valid amount within limits.  \n4. Click “Proceed”.  \n5. Enter the OTP received on the registered mobile number.  \n6. Confirm the transaction while network latency is active.  \nExpected Result: System detects the timeout, displays a message “Transaction could not be completed due to network issue, please try again later,” and does not debit the account; transaction can be retried.",
+                                "files": [],
+                                "error": false,
+                                "edit": false,
+                                "properties": {
+                                    "text_color": null,
+                                    "background_color": null,
+                                    "edited": false,
+                                    "source": {
+                                        "id": "GroqModel-HmYMe",
+                                        "display_name": "Groq",
+                                        "source": "openai/gpt-oss-120b"
+                                    },
+                                    "icon": null,
+                                    "allow_markdown": false,
+                                    "positive_feedback": null,
+                                    "state": "complete",
+                                    "targets": [],
+                                    "usage": {
+                                        "input_tokens": 572,
+                                        "output_tokens": 848,
+                                        "total_tokens": 1420
+                                    },
+                                    "build_duration": null
+                                },
+                                "category": "message",
+                                "content_blocks": [],
+                                "id": "88ddec48-088e-4916-8787-b4f6686feeb2",
+                                "flow_id": "8a6e37e0-f8fc-4028-a6f8-25a7eaf52e87",
+                                "session_metadata": null,
+                                "duration": null
+                            },
+                            "default_value": "",
+                            "text": "Test Case ID: TC_FT_001  \nTitle: Verify successful fund transfer within daily limit  \nPreconditions: User is logged in, has sufficient balance, daily transfer limit not reached, beneficiary is saved and active  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Select the saved beneficiary.  \n3. Enter an amount that is within the user's remaining daily transfer limit.  \n4. Click “Proceed”.  \n5. Enter the OTP received on the registered mobile number.  \n6. Confirm the transaction.  \nExpected Result: Transaction is processed successfully, a confirmation screen with transaction reference is displayed, and the account balance is debited accordingly.  \n\nTest Case ID: TC_FT_002  \nTitle: Verify fund transfer is blocked when amount exceeds daily limit  \nPreconditions: User is logged in, has sufficient balance, daily transfer limit already reached or amount entered exceeds remaining limit, beneficiary is saved and active  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Select the saved beneficiary.  \n3. Enter an amount greater than the remaining daily transfer limit.  \n4. Click “Proceed”.  \nExpected Result: System displays an error message such as “Transfer amount exceeds daily limit” and prevents further steps; no OTP is sent.  \n\nTest Case ID: TC_FT_003  \nTitle: Verify fund transfer fails with insufficient account balance  \nPreconditions: User is logged in, account balance is lower than the transfer amount, daily limit not exceeded, beneficiary is saved and active  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Select the saved beneficiary.  \n3. Enter an amount greater than the available account balance.  \n4. Click “Proceed”.  \n5. Enter the OTP received on the registered mobile number.  \n6. Confirm the transaction.  \nExpected Result: After OTP entry, system displays an error “Insufficient funds” and aborts the transaction; no debit occurs.  \n\nTest Case ID: TC_FT_004  \nTitle: Verify validation error for invalid beneficiary account number  \nPreconditions: User is logged in, has sufficient balance, daily limit not exceeded  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Choose “Add New Beneficiary”.  \n3. Enter an invalid account number (e.g., wrong length or non‑numeric characters).  \n4. Fill other required fields (bank name, IFSC, beneficiary name).  \n5. Click “Save”.  \nExpected Result: System validates the account number format and displays an error message such as “Invalid account number”; beneficiary is not saved and transfer cannot proceed.  \n\nTest Case ID: TC_FT_005  \nTitle: Verify system handles network timeout during fund transfer processing  \nPreconditions: User is logged in, has sufficient balance, daily limit not exceeded, beneficiary is saved and active, simulated network latency introduced  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Select the saved beneficiary.  \n3. Enter a valid amount within limits.  \n4. Click “Proceed”.  \n5. Enter the OTP received on the registered mobile number.  \n6. Confirm the transaction while network latency is active.  \nExpected Result: System detects the timeout, displays a message “Transaction could not be completed due to network issue, please try again later,” and does not debit the account; transaction can be retried.",
+                            "sender": "Machine",
+                            "sender_name": "AI",
+                            "files": [],
+                            "session_id": "8a6e37e0-f8fc-4028-a6f8-25a7eaf52e87",
+                            "context_id": "",
+                            "timestamp": "2026-05-07T14:32:41+00:00",
+                            "flow_id": "8a6e37e0-f8fc-4028-a6f8-25a7eaf52e87",
+                            "error": false,
+                            "edit": false,
+                            "properties": {
+                                "text_color": null,
+                                "background_color": null,
+                                "edited": false,
+                                "source": {
+                                    "id": "GroqModel-HmYMe",
+                                    "display_name": "Groq",
+                                    "source": "openai/gpt-oss-120b"
+                                },
+                                "icon": null,
+                                "allow_markdown": false,
+                                "positive_feedback": null,
+                                "state": "complete",
+                                "targets": [],
+                                "usage": {
+                                    "input_tokens": 572,
+                                    "output_tokens": 848,
+                                    "total_tokens": 1420
+                                },
+                                "build_duration": null
+                            },
+                            "category": "message",
+                            "content_blocks": [],
+                            "duration": null,
+                            "session_metadata": null
+                        }
+                    },
+                    "artifacts": {
+                        "message": "Test Case ID: TC_FT_001  \n\nTitle: Verify successful fund transfer within daily limit  \n\nPreconditions: User is logged in, has sufficient balance, daily transfer limit not reached, beneficiary is saved and active  \n\nSteps:  \n\n1. Navigate to the Fund Transfer page.  \n\n2. Select the saved beneficiary.  \n\n3. Enter an amount that is within the user's remaining daily transfer limit.  \n\n4. Click “Proceed”.  \n\n5. Enter the OTP received on the registered mobile number.  \n\n6. Confirm the transaction.  \n\nExpected Result: Transaction is processed successfully, a confirmation screen with transaction reference is displayed, and the account balance is debited accordingly.  \n\nTest Case ID: TC_FT_002  \n\nTitle: Verify fund transfer is blocked when amount exceeds daily limit  \n\nPreconditions: User is logged in, has sufficient balance, daily transfer limit already reached or amount entered exceeds remaining limit, beneficiary is saved and active  \n\nSteps:  \n\n1. Navigate to the Fund Transfer page.  \n\n2. Select the saved beneficiary.  \n\n3. Enter an amount greater than the remaining daily transfer limit.  \n\n4. Click “Proceed”.  \n\nExpected Result: System displays an error message such as “Transfer amount exceeds daily limit” and prevents further steps; no OTP is sent.  \n\nTest Case ID: TC_FT_003  \n\nTitle: Verify fund transfer fails with insufficient account balance  \n\nPreconditions: User is logged in, account balance is lower than the transfer amount, daily limit not exceeded, beneficiary is saved and active  \n\nSteps:  \n\n1. Navigate to the Fund Transfer page.  \n\n2. Select the saved beneficiary.  \n\n3. Enter an amount greater than the available account balance.  \n\n4. Click “Proceed”.  \n\n5. Enter the OTP received on the registered mobile number.  \n\n6. Confirm the transaction.  \n\nExpected Result: After OTP entry, system displays an error “Insufficient funds” and aborts the transaction; no debit occurs.  \n\nTest Case ID: TC_FT_004  \n\nTitle: Verify validation error for invalid beneficiary account number  \n\nPreconditions: User is logged in, has sufficient balance, daily limit not exceeded  \n\nSteps:  \n\n1. Navigate to the Fund Transfer page.  \n\n2. Choose “Add New Beneficiary”.  \n\n3. Enter an invalid account number (e.g., wrong length or non‑numeric characters).  \n\n4. Fill other required fields (bank name, IFSC, beneficiary name).  \n\n5. Click “Save”.  \n\nExpected Result: System validates the account number format and displays an error message such as “Invalid account number”; beneficiary is not saved and transfer cannot proceed.  \n\nTest Case ID: TC_FT_005  \n\nTitle: Verify system handles network timeout during fund transfer processing  \n\nPreconditions: User is logged in, has sufficient balance, daily limit not exceeded, beneficiary is saved and active, simulated network latency introduced  \n\nSteps:  \n\n1. Navigate to the Fund Transfer page.  \n\n2. Select the saved beneficiary.  \n\n3. Enter a valid amount within limits.  \n\n4. Click “Proceed”.  \n\n5. Enter the OTP received on the registered mobile number.  \n\n6. Confirm the transaction while network latency is active.  \n\nExpected Result: System detects the timeout, displays a message “Transaction could not be completed due to network issue, please try again later,” and does not debit the account; transaction can be retried.",
+                        "sender": "Machine",
+                        "sender_name": "AI",
+                        "files": [],
+                        "type": "object"
+                    },
+                    "outputs": {
+                        "message": {
+                            "message": "Test Case ID: TC_FT_001  \nTitle: Verify successful fund transfer within daily limit  \nPreconditions: User is logged in, has sufficient balance, daily transfer limit not reached, beneficiary is saved and active  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Select the saved beneficiary.  \n3. Enter an amount that is within the user's remaining daily transfer limit.  \n4. Click “Proceed”.  \n5. Enter the OTP received on the registered mobile number.  \n6. Confirm the transaction.  \nExpected Result: Transaction is processed successfully, a confirmation screen with transaction reference is displayed, and the account balance is debited accordingly.  \n\nTest Case ID: TC_FT_002  \nTitle: Verify fund transfer is blocked when amount exceeds daily limit  \nPreconditions: User is logged in, has sufficient balance, daily transfer limit already reached or amount entered exceeds remaining limit, beneficiary is saved and active  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Select the saved beneficiary.  \n3. Enter an amount greater than the remaining daily transfer limit.  \n4. Click “Proceed”.  \nExpected Result: System displays an error message such as “Transfer amount exceeds daily limit” and prevents further steps; no OTP is sent.  \n\nTest Case ID: TC_FT_003  \nTitle: Verify fund transfer fails with insufficient account balance  \nPreconditions: User is logged in, account balance is lower than the transfer amount, daily limit not exceeded, beneficiary is saved and active  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Select the saved beneficiary.  \n3. Enter an amount greater than the available account balance.  \n4. Click “Proceed”.  \n5. Enter the OTP received on the registered mobile number.  \n6. Confirm the transaction.  \nExpected Result: After OTP entry, system displays an error “Insufficient funds” and aborts the transaction; no debit occurs.  \n\nTest Case ID: TC_FT_004  \nTitle: Verify validation error for invalid beneficiary account number  \nPreconditions: User is logged in, has sufficient balance, daily limit not exceeded  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Choose “Add New Beneficiary”.  \n3. Enter an invalid account number (e.g., wrong length or non‑numeric characters).  \n4. Fill other required fields (bank name, IFSC, beneficiary name).  \n5. Click “Save”.  \nExpected Result: System validates the account number format and displays an error message such as “Invalid account number”; beneficiary is not saved and transfer cannot proceed.  \n\nTest Case ID: TC_FT_005  \nTitle: Verify system handles network timeout during fund transfer processing  \nPreconditions: User is logged in, has sufficient balance, daily limit not exceeded, beneficiary is saved and active, simulated network latency introduced  \nSteps:  \n1. Navigate to the Fund Transfer page.  \n2. Select the saved beneficiary.  \n3. Enter a valid amount within limits.  \n4. Click “Proceed”.  \n5. Enter the OTP received on the registered mobile number.  \n6. Confirm the transaction while network latency is active.  \nExpected Result: System detects the timeout, displays a message “Transaction could not be completed due to network issue, please try again later,” and does not debit the account; transaction can be retried.",
+                            "type": "text"
+                        }
+                    },
+                    "logs": {
+                        "message": []
+                    },
+                    "messages": [
+                        {
+                            "message": "Test Case ID: TC_FT_001  \n\nTitle: Verify successful fund transfer within daily limit  \n\nPreconditions: User is logged in, has sufficient balance, daily transfer limit not reached, beneficiary is saved and active  \n\nSteps:  \n\n1. Navigate to the Fund Transfer page.  \n\n2. Select the saved beneficiary.  \n\n3. Enter an amount that is within the user's remaining daily transfer limit.  \n\n4. Click “Proceed”.  \n\n5. Enter the OTP received on the registered mobile number.  \n\n6. Confirm the transaction.  \n\nExpected Result: Transaction is processed successfully, a confirmation screen with transaction reference is displayed, and the account balance is debited accordingly.  \n\nTest Case ID: TC_FT_002  \n\nTitle: Verify fund transfer is blocked when amount exceeds daily limit  \n\nPreconditions: User is logged in, has sufficient balance, daily transfer limit already reached or amount entered exceeds remaining limit, beneficiary is saved and active  \n\nSteps:  \n\n1. Navigate to the Fund Transfer page.  \n\n2. Select the saved beneficiary.  \n\n3. Enter an amount greater than the remaining daily transfer limit.  \n\n4. Click “Proceed”.  \n\nExpected Result: System displays an error message such as “Transfer amount exceeds daily limit” and prevents further steps; no OTP is sent.  \n\nTest Case ID: TC_FT_003  \n\nTitle: Verify fund transfer fails with insufficient account balance  \n\nPreconditions: User is logged in, account balance is lower than the transfer amount, daily limit not exceeded, beneficiary is saved and active  \n\nSteps:  \n\n1. Navigate to the Fund Transfer page.  \n\n2. Select the saved beneficiary.  \n\n3. Enter an amount greater than the available account balance.  \n\n4. Click “Proceed”.  \n\n5. Enter the OTP received on the registered mobile number.  \n\n6. Confirm the transaction.  \n\nExpected Result: After OTP entry, system displays an error “Insufficient funds” and aborts the transaction; no debit occurs.  \n\nTest Case ID: TC_FT_004  \n\nTitle: Verify validation error for invalid beneficiary account number  \n\nPreconditions: User is logged in, has sufficient balance, daily limit not exceeded  \n\nSteps:  \n\n1. Navigate to the Fund Transfer page.  \n\n2. Choose “Add New Beneficiary”.  \n\n3. Enter an invalid account number (e.g., wrong length or non‑numeric characters).  \n\n4. Fill other required fields (bank name, IFSC, beneficiary name).  \n\n5. Click “Save”.  \n\nExpected Result: System validates the account number format and displays an error message such as “Invalid account number”; beneficiary is not saved and transfer cannot proceed.  \n\nTest Case ID: TC_FT_005  \n\nTitle: Verify system handles network timeout during fund transfer processing  \n\nPreconditions: User is logged in, has sufficient balance, daily limit not exceeded, beneficiary is saved and active, simulated network latency introduced  \n\nSteps:  \n\n1. Navigate to the Fund Transfer page.  \n\n2. Select the saved beneficiary.  \n\n3. Enter a valid amount within limits.  \n\n4. Click “Proceed”.  \n\n5. Enter the OTP received on the registered mobile number.  \n\n6. Confirm the transaction while network latency is active.  \n\nExpected Result: System detects the timeout, displays a message “Transaction could not be completed due to network issue, please try again later,” and does not debit the account; transaction can be retried.",
+                            "sender": "Machine",
+                            "sender_name": "AI",
+                            "session_id": "8a6e37e0-f8fc-4028-a6f8-25a7eaf52e87",
+                            "stream_url": null,
+                            "component_id": "ChatOutput-0av2q",
+                            "files": [],
+                            "type": "text"
+                        }
+                    ],
+                    "timedelta": null,
+                    "duration": null,
+                    "component_display_name": "Chat Output",
+                    "component_id": "ChatOutput-0av2q",
+                    "used_frozen_result": false,
+                    "token_usage": null
+                }
+            ]
+        }
+    ]
+}
