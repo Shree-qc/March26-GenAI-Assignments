@@ -1,0 +1,701 @@
+{
+  "info": {
+    "_postman_id": "0f475dd7-ecaa-40db-8f9d-7d2dd16d3620",
+    "name": "Ingestion-Resumes-AI-RAG",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53565631",
+    "_collection_link": "https://go.postman.co/collection/53565631-0f475dd7-ecaa-40db-8f9d-7d2dd16d3620?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "health",
+      "item": [
+        {
+          "name": "health Copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/v1/health",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "health"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DB_health Copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/v1/health/db",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "health",
+                "db"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Upload_File",
+      "item": [
+        {
+          "name": "Upload-pdf-file",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "type": "file",
+                  "key": "file",
+                  "src": "/E:/GENAI/Week9-Best-Practices/Resumes/Resumes/Vishnupriya Pinaca.pdf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/upload",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "upload"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "invalidFileFormat",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "type": "file",
+                  "key": "file",
+                  "src": "/E:/GENAI/Week9-Best-Practices/Resumes/Resumes/AI Trainee_Qeagle (1).docx"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/upload",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "upload"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "largeSize",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "type": "file",
+                  "key": "file",
+                  "src": "/E:/GENAI/Week9-Best-Practices/Resumes/Resumes/KARTHIKSAKTHIVEL.pdf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/upload",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "upload"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "uploadResumeIngestion",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "type": "file",
+                  "key": "file",
+                  "src": "/E:/GENAI/Week9-Best-Practices/Resumes/Resumes/White Minimalist Resume (1).pdf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/upload",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "upload"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getStatusOFresume",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/status/8d1bd652-dbdb-4c34-8fa5-f1a689caa9ec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "status",
+                "8d1bd652-dbdb-4c34-8fa5-f1a689caa9ec"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SSE",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/status/stream/12463a6e-4f29-48b9-a520-7cd07e1eee2c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "status",
+                "stream",
+                "12463a6e-4f29-48b9-a520-7cd07e1eee2c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "store",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"text\": \"RESUME\\nVishnupriya. R\\nMobile : +91 8508775889\\nE-Mail : vishnupr.priya@gmail.com\\nDedicated professional with skills in streamlining operations and heightening productivity by mastering HR\\nsituations\\n~High Impact Human Resource Management Professional~\\nPROFILE SNAPSHOT\\nCore Competencies with 12 years of experience\\n~Recruitment ~Human Resource Management ~Talent Acquisition\\n~Employee Engagement ~Statutory Compliance ~Training & Development\\n~Compensation & Benefits ~Diversity&Inclusion ~MIS Documentation\\n Gained exposure in managing entire recruitment life cycle for selecting the best talent from diverse\\nsources after identification of manpower requirement.\\n Expertise in designing HR and other related manuals for introducing new and effective schemes for employee\\ndevelopment.\\n Proficient in maintaining harmonious relations between management & employees through efficient\\nadministration, engagement, and resolution of employee grievances.\\n Resourceful in designing, developing & executing various Business-led Programs for enhancing\\norganizational competencies & establishing high performance mindset.\\n Using HRMS Software for updating management staff database, employee benefits\\n Experience in Essl and Easy time Pro kind of Attendance Tracking Software to overseeing attendance records,\\nleaves, LTC, payrolls, personnel files, and records of employees.\\n Skilled in administering smooth implementation of HR policies & system for organizational effectiveness.\\n A methodical professional with a deep sense of ethics and integrity\\nExperience Summary\\nTalent Acquisition\\n• Handle the entire tactical Talent Acquisition process.\\n• Communicate all compensation, benefits & other policies, and formalities properly to candidate.\\n• Finalize offer letters and fitment as per defined matrix\\n• Coordinate with Hod’s for interview schedules.\\n• Resolve any reimbursement/consultant payment related issue\\n• Designing and ensuring proper implementation of GET/MT Program\\nEmployee Engagement Activities\\n• Finalize the annual engagement calendar.Track and highlight engagement budget variances\\n• Executes employee engagement surveys basis identified levers to be measured and coordinate with the\\nexternal partner for survey floating and implementation.\\n• Execute events as per Annual engagement Calendar. (e.g. Town hall meeting, Birthday celebration, Safety\\nweek, Kaizen Competition, Circle Meetings, Blood donation camp. Health checkup camps, Family get together\\nEtc.)\\n• Coordination of various Engagement committee meetings. (POSH/ Canteen/Sports/ safety) Member of IC\\ncommittee.\\nPerformance Management\\n• Communicate, resolve queries, and drive cascade through KRA/goal setting principles in terms of SMART\\n(specific, measurable, achievable, realistic, and timely) goals, objective measurement parameters, goal\\nweightage etc.\\n• Coordinate for completion of Mid-year and end year reviews.\\n• Ensure expectations and feedback from multiple stakeholders during the performance review process are\\ntaken during rating normalization and rewards linkage decisions\\n• Drive capability building of managers and employees in having performance and feedback conversations to\\nbuild the skill around the system\\nOnboarding & offboarding Formalities\\n• HRMS entry/ document verification/ organization announcement of new joiner.\\n• Induction & Orientation of new joiner\\n• Exit interview of resigned employee.\\n• Separation action & relieving letters of left employees.\\nMIS (Management Information System) & Audit Support\\n Preparing and maintaining the MIS reports and submitting the same to the decision-making panel of\\nthe organization for fine tuning the business strategies.\\n Responsible for various customer & internal Audits (Eg. IATF, EHS, OHSAS, ISO, 5S)\\nWelfare Activities\\n Conduct all welfare activities as per employee welfare calendar, in collaboration with Union and other\\nemployee committees (Eg. Shoes/ uniform/ Medical checkups/ etc.)\\n Ensure transportation, Canteen, Medical facilities are run as per policy and guidelines.\\nOrganization Design & Manpower Planning\\n Support in data collection and implementation of relevant Manpower Planning techniques medical facilities\\nfor self and family of employees\\n Ensure updation of organization charts as and when required as per decisions and policies.\\n Ensure approvals for MPRs for recruitment as per manpower plan and authority level/matrix\\n Measure the impact of Attraction and Retention initiatives taken and prepare reports along with Attrition\\nnumbers to present to senior stakeholders\\nDriving and Execution of HR Policies/SOPs:\\n Set up and Execution of HR Policies within the Organization\\n Communicating HR policies & procedures across organization like Leave, Travel, Mediclaim, Induction,\\nRecruitments, Exit, Welfare, Ethics, Code of Conduct etc.\\n Employee Engagement Activities.\\nDiversity and Inclusion\\n Driving and initiating various diversity initiatives (Gender, Generation, Culture & Internationality)\\n Moderating various workshops to discuss and understand diversity and enhance inclusion.\\n Mentoring and coaching\\nCompensation & Benefit:\\n Salary surveys, salary benchmarking, compensation policies, benefits policies, rewards, medical, insurance.\\n Classifying the wage structure into the different wage components and reducing the organizational cost\\nstrategically.\\n Monitoring the salary structures and identifying the areas of improvement. Taking care of Employee payroll\\nManagement\\nStatutory & Legal Compliances:\\n Overall Statutory and Regulatory Compliances management i.e. PF , ESI, HR Audits as Factories Acts, Labour\\nLaws and ensuring timely compliances under various Acts.\\nGrowth Path\\nSenior HR from May-2022 to till Date\\nM/s. 247 Hire India Pvt Ltd, Trichy, Reporting to Head of HR Handling 2 branches in Trichy and Bangalore\\nAssistant Manager – HR & Admin From 2018 November to April 2022\\nM/s. KSH Automotive Pvt Ltd, Anantapur, Andhra Pradesh (Tier 1 vendor of KIA Motors), Leadership role reporting to GM\\nof HR & Admin\\nAssistant Manager – HR & Admin From 2017 December to June 2018\\nM/s. Inhan Cme Engineering Pvt Ltd., Leadership role Reporting to MD of the Company\\nSr Executive Officer – HR & GA From April 2012 to June 2016\\nM/s. RVS Exports\\nGraphic Analyst From August 2008 to July 2010\\nM/s. HCL Technologies Pvt Ltd.,\\nHR Assistant From May 2007 to July 2008\\nM/s. Mehala Machines India Pvt Ltd- like an internship role reporting to the Manager\\nHighlights\\n Reduced cost in Administration related expenses like – Canteen, Transport and stationery, / Merit of reducing\\nthe recruitment cost by 70%.\\n Created and successfully ran the training for Employees.\\n Significant Key Person for ISO & IATF Audit.\\n Taking care of Legal requirements in all aspects.\\n Presiding officer in POSH Committee\\nAcademic Qualification\\n MBA – Master Of Business Administration in HR, TNOU, Tamilnadu With 80%\\n M.Phil –Master Of Philosophy in Computer Science, Madurai Kamaraj University, Tamilnadu With 80%\\n MCA – Master of Computer Application,from Tamilnadu Open University, Tamilnadu with 75%\\n B.Sc – Bachelor Of Science in Computer Science from Bharathiyar University, Tamilnadu With 75%\\nPersonal Details\\nDate of Birth : 11\\nth\\nApril, 1987\\nLanguages Known : English, Tamil & Telugu\\nPermanent Address : 3-8-4, Main Road, Lakshmipuram, Theni, Tamilnadu-625523\\nPresent Address : L, 3\\nrd\\nFloor, Rajha Plaza, 10\\nth\\nCross A, Thillai Nagar, Trichy -620018\",\n    \"email\":\"vishnupr.priya@gmail.com\",\n    \"skills\":[\"Node.js\"],\n    // \"embedding\":[...],\n    \"embeddingModel\":\"mistral-embed\",\n    \"embeddingDimension\":1024,\n    \"sourceFilename\":\"resume.pdf\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "extract",
+      "item": [
+        {
+          "name": "extractTextToJSON",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"filePath\":\"uploads/1780158354354-Vishnupriya_Pinaca.pdf\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/extract",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "extract"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "clean",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"text\":\"RESUME \\nVishnupriya. R \\nMobile : +91 8508775889  \\nE-Mail : vishnupr.priya@gmail.com \\n \\nDedicated professional with skills in streamlining operations and heightening productivity by mastering HR \\nsituations \\n~High Impact Human Resource Management Professional~ \\nPROFILE SNAPSHOT \\n \\nCore Competencies with 12 years of experience \\n~Recruitment                         ~Human Resource Management  ~Talent Acquisition \\n~Employee Engagement   ~Statutory Compliance     ~Training & Development  \\n~Compensation & Benefits ~Diversity&Inclusion                ~MIS Documentation \\n \\n Gained  exposure  in managing  entire  recruitment life  cycle for  selecting  the  best  talent  from  diverse \\nsources after identification of manpower requirement.  \\n Expertise in designing HR and other related manuals for introducing new and effective schemes for employee \\ndevelopment. \\n Proficient  in  maintaining  harmonious  relations  between  management  &  employees through  efficient \\nadministration, engagement, and resolution of employee grievances.  \\n Resourceful   in   designing,   developing   &   executing   various   Business-led   Programs   for   enhancing \\norganizational competencies & establishing high performance mindset.  \\n Using HRMS Software for updating management staff database, employee benefits \\n Experience in Essl and Easy time Pro kind of Attendance Tracking Software to overseeing attendance records, \\nleaves, LTC, payrolls, personnel files, and records of employees.  \\n Skilled in administering smooth implementation of HR policies & system for organizational effectiveness. \\n A methodical professional with a deep sense of ethics and integrity \\n \\nExperience Summary \\n \\nTalent Acquisition \\n \\n• Handle the entire tactical Talent Acquisition process. \\n• Communicate all compensation, benefits & other policies, and formalities properly to candidate. \\n• Finalize offer letters and fitment as per defined matrix \\n• Coordinate with Hod’s for interview schedules. \\n• Resolve any reimbursement/consultant payment related issue \\n• Designing and ensuring proper implementation of GET/MT Program \\n \\nEmployee Engagement Activities \\n \\n• Finalize the annual engagement calendar.Track and highlight engagement budget variances \\n• Executes employee engagement surveys basis identified levers to be measured and coordinate with the \\nexternal partner for survey floating and implementation. \\n• Execute events as per Annual engagement Calendar. (e.g. Town hall meeting, Birthday celebration, Safety \\nweek, Kaizen Competition, Circle Meetings, Blood donation camp. Health checkup camps, Family get together \\nEtc.) \\n• Coordination  of  various  Engagement committee meetings.  (POSH/  Canteen/Sports/ safety) Member of  IC \\ncommittee. \\n\\nPerformance Management \\n \\n• Communicate, resolve queries, and drive cascade through KRA/goal setting principles in terms of SMART \\n(specific, measurable, achievable, realistic, and timely) goals, objective measurement parameters, goal \\nweightage etc. \\n• Coordinate for completion of Mid-year and end year reviews. \\n• Ensure expectations and feedback from multiple stakeholders during the performance review process are \\ntaken during rating normalization and rewards linkage decisions \\n• Drive capability building of managers and employees in having performance and feedback conversations to \\nbuild the skill around the system \\n \\nOnboarding & offboarding Formalities \\n \\n• HRMS entry/ document verification/ organization announcement of new joiner. \\n• Induction & Orientation of new joiner \\n• Exit interview of resigned employee. \\n• Separation action & relieving letters of left employees. \\n \\nMIS (Management Information System) & Audit Support \\n \\n Preparing and maintaining the MIS reports and submitting the same to the decision-making panel of \\nthe organization for fine tuning the business strategies.   \\n Responsible for various customer & internal Audits (Eg. IATF, EHS, OHSAS, ISO, 5S) \\n \\nWelfare Activities \\n \\n Conduct all welfare activities as per employee welfare calendar, in collaboration with Union and other \\nemployee committees (Eg. Shoes/ uniform/ Medical checkups/ etc.) \\n Ensure transportation, Canteen, Medical facilities are run as per policy and guidelines. \\n \\nOrganization Design & Manpower Planning \\n \\n Support in data collection and implementation of relevant Manpower Planning techniques medical facilities \\nfor self and family of employees \\n Ensure updation of organization charts as and when required as per decisions and policies. \\n Ensure approvals for MPRs for recruitment as per manpower plan and authority level/matrix \\n Measure the impact of Attraction and Retention initiatives taken and prepare reports along with Attrition \\nnumbers to present to senior stakeholders \\n \\nDriving and Execution of HR Policies/SOPs: \\n \\n Set up and Execution of HR Policies within the Organization \\n Communicating HR policies & procedures across organization like Leave, Travel, Mediclaim, Induction, \\nRecruitments, Exit, Welfare, Ethics, Code of Conduct etc. \\n Employee Engagement Activities. \\n \\nDiversity and Inclusion \\n Driving and initiating various diversity initiatives (Gender, Generation, Culture & Internationality) \\n Moderating various workshops to discuss and understand diversity and enhance inclusion. \\n Mentoring and coaching \\n \\n \\n\\nCompensation & Benefit: \\n \\n Salary surveys, salary benchmarking, compensation policies, benefits policies, rewards, medical, insurance. \\n Classifying the wage structure into the different wage components and reducing the organizational cost \\nstrategically. \\n Monitoring  the  salary  structures  and  identifying  the  areas  of  improvement. Taking  care of  Employee  payroll \\nManagement \\n \\nStatutory & Legal Compliances: \\n \\n Overall  Statutory  and  Regulatory  Compliances  management  i.e.  PF  ,  ESI,  HR  Audits  as  Factories  Acts, Labour \\nLaws and ensuring timely compliances under various Acts. \\n \\nGrowth Path \\n \\nSenior HR from May-2022 to till Date \\nM/s. 247 Hire India Pvt Ltd, Trichy, Reporting to Head of HR Handling 2 branches in Trichy and Bangalore \\n \\nAssistant Manager – HR & Admin From 2018 November to April 2022 \\nM/s. KSH Automotive Pvt Ltd, Anantapur, Andhra Pradesh (Tier 1 vendor of KIA Motors), Leadership role reporting to GM \\nof HR & Admin \\n \\nAssistant Manager – HR & Admin From 2017 December to June 2018 \\nM/s. Inhan Cme Engineering Pvt Ltd., Leadership role Reporting to MD of the Company \\n \\nSr Executive Officer – HR & GA From April 2012 to June 2016 \\nM/s. RVS Exports \\n \\nGraphic Analyst From August 2008 to July 2010 \\nM/s. HCL Technologies Pvt Ltd., \\n \\nHR Assistant From May 2007 to July 2008 \\nM/s. Mehala Machines India Pvt Ltd- like an internship role reporting to the Manager \\n \\nHighlights \\n Reduced cost in Administration related expenses like – Canteen, Transport and stationery, / Merit of reducing \\nthe recruitment cost by 70%. \\n Created and successfully ran the training for Employees. \\n Significant Key Person for ISO & IATF Audit. \\n Taking care of Legal requirements in all aspects. \\n Presiding officer in POSH Committee \\n \\nAcademic Qualification \\n MBA – Master Of Business Administration in HR, TNOU, Tamilnadu With 80% \\n M.Phil –Master Of Philosophy in Computer Science, Madurai Kamaraj University, Tamilnadu With 80% \\n MCA – Master of Computer Application,from Tamilnadu Open University, Tamilnadu with 75% \\n B.Sc – Bachelor Of Science in Computer Science from Bharathiyar University, Tamilnadu With 75% \\n \\nPersonal Details \\n \\nDate of Birth  : 11\\nth\\n April, 1987 \\nLanguages Known : English, Tamil & Telugu \\nPermanent Address : 3-8-4, Main Road, Lakshmipuram, Theni, Tamilnadu-625523 \\nPresent  Address : L, 3\\nrd\\n Floor, Rajha Plaza, 10\\nth\\n Cross A, Thillai Nagar, Trichy -620018\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/clean",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "clean"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "clean",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"text\":\"RESUME \\nVishnupriya. R \\nMobile : +91 8508775889  \\nE-Mail : vishnupr.priya@gmail.com \\n \\nDedicated professional with skills in streamlining operations and heightening productivity by mastering HR \\nsituations \\n~High Impact Human Resource Management Professional~ \\nPROFILE SNAPSHOT \\n \\nCore Competencies with 12 years of experience \\n~Recruitment                         ~Human Resource Management  ~Talent Acquisition \\n~Employee Engagement   ~Statutory Compliance     ~Training & Development  \\n~Compensation & Benefits ~Diversity&Inclusion                ~MIS Documentation \\n \\n Gained  exposure  in managing  entire  recruitment life  cycle for  selecting  the  best  talent  from  diverse \\nsources after identification of manpower requirement.  \\n Expertise in designing HR and other related manuals for introducing new and effective schemes for employee \\ndevelopment. \\n Proficient  in  maintaining  harmonious  relations  between  management  &  employees through  efficient \\nadministration, engagement, and resolution of employee grievances.  \\n Resourceful   in   designing,   developing   &   executing   various   Business-led   Programs   for   enhancing \\norganizational competencies & establishing high performance mindset.  \\n Using HRMS Software for updating management staff database, employee benefits \\n Experience in Essl and Easy time Pro kind of Attendance Tracking Software to overseeing attendance records, \\nleaves, LTC, payrolls, personnel files, and records of employees.  \\n Skilled in administering smooth implementation of HR policies & system for organizational effectiveness. \\n A methodical professional with a deep sense of ethics and integrity \\n \\nExperience Summary \\n \\nTalent Acquisition \\n \\n• Handle the entire tactical Talent Acquisition process. \\n• Communicate all compensation, benefits & other policies, and formalities properly to candidate. \\n• Finalize offer letters and fitment as per defined matrix \\n• Coordinate with Hod’s for interview schedules. \\n• Resolve any reimbursement/consultant payment related issue \\n• Designing and ensuring proper implementation of GET/MT Program \\n \\nEmployee Engagement Activities \\n \\n• Finalize the annual engagement calendar.Track and highlight engagement budget variances \\n• Executes employee engagement surveys basis identified levers to be measured and coordinate with the \\nexternal partner for survey floating and implementation. \\n• Execute events as per Annual engagement Calendar. (e.g. Town hall meeting, Birthday celebration, Safety \\nweek, Kaizen Competition, Circle Meetings, Blood donation camp. Health checkup camps, Family get together \\nEtc.) \\n• Coordination  of  various  Engagement committee meetings.  (POSH/  Canteen/Sports/ safety) Member of  IC \\ncommittee. \\n\\nPerformance Management \\n \\n• Communicate, resolve queries, and drive cascade through KRA/goal setting principles in terms of SMART \\n(specific, measurable, achievable, realistic, and timely) goals, objective measurement parameters, goal \\nweightage etc. \\n• Coordinate for completion of Mid-year and end year reviews. \\n• Ensure expectations and feedback from multiple stakeholders during the performance review process are \\ntaken during rating normalization and rewards linkage decisions \\n• Drive capability building of managers and employees in having performance and feedback conversations to \\nbuild the skill around the system \\n \\nOnboarding & offboarding Formalities \\n \\n• HRMS entry/ document verification/ organization announcement of new joiner. \\n• Induction & Orientation of new joiner \\n• Exit interview of resigned employee. \\n• Separation action & relieving letters of left employees. \\n \\nMIS (Management Information System) & Audit Support \\n \\n Preparing and maintaining the MIS reports and submitting the same to the decision-making panel of \\nthe organization for fine tuning the business strategies.   \\n Responsible for various customer & internal Audits (Eg. IATF, EHS, OHSAS, ISO, 5S) \\n \\nWelfare Activities \\n \\n Conduct all welfare activities as per employee welfare calendar, in collaboration with Union and other \\nemployee committees (Eg. Shoes/ uniform/ Medical checkups/ etc.) \\n Ensure transportation, Canteen, Medical facilities are run as per policy and guidelines. \\n \\nOrganization Design & Manpower Planning \\n \\n Support in data collection and implementation of relevant Manpower Planning techniques medical facilities \\nfor self and family of employees \\n Ensure updation of organization charts as and when required as per decisions and policies. \\n Ensure approvals for MPRs for recruitment as per manpower plan and authority level/matrix \\n Measure the impact of Attraction and Retention initiatives taken and prepare reports along with Attrition \\nnumbers to present to senior stakeholders \\n \\nDriving and Execution of HR Policies/SOPs: \\n \\n Set up and Execution of HR Policies within the Organization \\n Communicating HR policies & procedures across organization like Leave, Travel, Mediclaim, Induction, \\nRecruitments, Exit, Welfare, Ethics, Code of Conduct etc. \\n Employee Engagement Activities. \\n \\nDiversity and Inclusion \\n Driving and initiating various diversity initiatives (Gender, Generation, Culture & Internationality) \\n Moderating various workshops to discuss and understand diversity and enhance inclusion. \\n Mentoring and coaching \\n \\n \\n\\nCompensation & Benefit: \\n \\n Salary surveys, salary benchmarking, compensation policies, benefits policies, rewards, medical, insurance. \\n Classifying the wage structure into the different wage components and reducing the organizational cost \\nstrategically. \\n Monitoring  the  salary  structures  and  identifying  the  areas  of  improvement. Taking  care of  Employee  payroll \\nManagement \\n \\nStatutory & Legal Compliances: \\n \\n Overall  Statutory  and  Regulatory  Compliances  management  i.e.  PF  ,  ESI,  HR  Audits  as  Factories  Acts, Labour \\nLaws and ensuring timely compliances under various Acts. \\n \\nGrowth Path \\n \\nSenior HR from May-2022 to till Date \\nM/s. 247 Hire India Pvt Ltd, Trichy, Reporting to Head of HR Handling 2 branches in Trichy and Bangalore \\n \\nAssistant Manager – HR & Admin From 2018 November to April 2022 \\nM/s. KSH Automotive Pvt Ltd, Anantapur, Andhra Pradesh (Tier 1 vendor of KIA Motors), Leadership role reporting to GM \\nof HR & Admin \\n \\nAssistant Manager – HR & Admin From 2017 December to June 2018 \\nM/s. Inhan Cme Engineering Pvt Ltd., Leadership role Reporting to MD of the Company \\n \\nSr Executive Officer – HR & GA From April 2012 to June 2016 \\nM/s. RVS Exports \\n \\nGraphic Analyst From August 2008 to July 2010 \\nM/s. HCL Technologies Pvt Ltd., \\n \\nHR Assistant From May 2007 to July 2008 \\nM/s. Mehala Machines India Pvt Ltd- like an internship role reporting to the Manager \\n \\nHighlights \\n Reduced cost in Administration related expenses like – Canteen, Transport and stationery, / Merit of reducing \\nthe recruitment cost by 70%. \\n Created and successfully ran the training for Employees. \\n Significant Key Person for ISO & IATF Audit. \\n Taking care of Legal requirements in all aspects. \\n Presiding officer in POSH Committee \\n \\nAcademic Qualification \\n MBA – Master Of Business Administration in HR, TNOU, Tamilnadu With 80% \\n M.Phil –Master Of Philosophy in Computer Science, Madurai Kamaraj University, Tamilnadu With 80% \\n MCA – Master of Computer Application,from Tamilnadu Open University, Tamilnadu with 75% \\n B.Sc – Bachelor Of Science in Computer Science from Bharathiyar University, Tamilnadu With 75% \\n \\nPersonal Details \\n \\nDate of Birth  : 11\\nth\\n April, 1987 \\nLanguages Known : English, Tamil & Telugu \\nPermanent Address : 3-8-4, Main Road, Lakshmipuram, Theni, Tamilnadu-625523 \\nPresent  Address : L, 3\\nrd\\n Floor, Rajha Plaza, 10\\nth\\n Cross A, Thillai Nagar, Trichy -620018\"}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/resume/clean",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "v1",
+                    "resume",
+                    "clean"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Embedder-Policy",
+                  "value": "require-corp"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=15552000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "X-Request-Id",
+                  "value": "7bf525ad-0100-44ec-a5d5-49a346b01bd0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "7741"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1e3d-2BmKMxkMl+kXz/ouV949o1JphQs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 31 May 2026 01:31:47 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"cleanedText\": \"RESUME\\nVishnupriya. R\\nMobile : +91 8508775889\\nE-Mail : vishnupr.priya@gmail.com\\nDedicated professional with skills in streamlining operations and heightening productivity by mastering HR\\nsituations\\n~High Impact Human Resource Management Professional~\\nPROFILE SNAPSHOT\\nCore Competencies with 12 years of experience\\n~Recruitment ~Human Resource Management ~Talent Acquisition\\n~Employee Engagement ~Statutory Compliance ~Training & Development\\n~Compensation & Benefits ~Diversity&Inclusion ~MIS Documentation\\n Gained exposure in managing entire recruitment life cycle for selecting the best talent from diverse\\nsources after identification of manpower requirement.\\n Expertise in designing HR and other related manuals for introducing new and effective schemes for employee\\ndevelopment.\\n Proficient in maintaining harmonious relations between management & employees through efficient\\nadministration, engagement, and resolution of employee grievances.\\n Resourceful in designing, developing & executing various Business-led Programs for enhancing\\norganizational competencies & establishing high performance mindset.\\n Using HRMS Software for updating management staff database, employee benefits\\n Experience in Essl and Easy time Pro kind of Attendance Tracking Software to overseeing attendance records,\\nleaves, LTC, payrolls, personnel files, and records of employees.\\n Skilled in administering smooth implementation of HR policies & system for organizational effectiveness.\\n A methodical professional with a deep sense of ethics and integrity\\nExperience Summary\\nTalent Acquisition\\n• Handle the entire tactical Talent Acquisition process.\\n• Communicate all compensation, benefits & other policies, and formalities properly to candidate.\\n• Finalize offer letters and fitment as per defined matrix\\n• Coordinate with Hod’s for interview schedules.\\n• Resolve any reimbursement/consultant payment related issue\\n• Designing and ensuring proper implementation of GET/MT Program\\nEmployee Engagement Activities\\n• Finalize the annual engagement calendar.Track and highlight engagement budget variances\\n• Executes employee engagement surveys basis identified levers to be measured and coordinate with the\\nexternal partner for survey floating and implementation.\\n• Execute events as per Annual engagement Calendar. (e.g. Town hall meeting, Birthday celebration, Safety\\nweek, Kaizen Competition, Circle Meetings, Blood donation camp. Health checkup camps, Family get together\\nEtc.)\\n• Coordination of various Engagement committee meetings. (POSH/ Canteen/Sports/ safety) Member of IC\\ncommittee.\\nPerformance Management\\n• Communicate, resolve queries, and drive cascade through KRA/goal setting principles in terms of SMART\\n(specific, measurable, achievable, realistic, and timely) goals, objective measurement parameters, goal\\nweightage etc.\\n• Coordinate for completion of Mid-year and end year reviews.\\n• Ensure expectations and feedback from multiple stakeholders during the performance review process are\\ntaken during rating normalization and rewards linkage decisions\\n• Drive capability building of managers and employees in having performance and feedback conversations to\\nbuild the skill around the system\\nOnboarding & offboarding Formalities\\n• HRMS entry/ document verification/ organization announcement of new joiner.\\n• Induction & Orientation of new joiner\\n• Exit interview of resigned employee.\\n• Separation action & relieving letters of left employees.\\nMIS (Management Information System) & Audit Support\\n Preparing and maintaining the MIS reports and submitting the same to the decision-making panel of\\nthe organization for fine tuning the business strategies.\\n Responsible for various customer & internal Audits (Eg. IATF, EHS, OHSAS, ISO, 5S)\\nWelfare Activities\\n Conduct all welfare activities as per employee welfare calendar, in collaboration with Union and other\\nemployee committees (Eg. Shoes/ uniform/ Medical checkups/ etc.)\\n Ensure transportation, Canteen, Medical facilities are run as per policy and guidelines.\\nOrganization Design & Manpower Planning\\n Support in data collection and implementation of relevant Manpower Planning techniques medical facilities\\nfor self and family of employees\\n Ensure updation of organization charts as and when required as per decisions and policies.\\n Ensure approvals for MPRs for recruitment as per manpower plan and authority level/matrix\\n Measure the impact of Attraction and Retention initiatives taken and prepare reports along with Attrition\\nnumbers to present to senior stakeholders\\nDriving and Execution of HR Policies/SOPs:\\n Set up and Execution of HR Policies within the Organization\\n Communicating HR policies & procedures across organization like Leave, Travel, Mediclaim, Induction,\\nRecruitments, Exit, Welfare, Ethics, Code of Conduct etc.\\n Employee Engagement Activities.\\nDiversity and Inclusion\\n Driving and initiating various diversity initiatives (Gender, Generation, Culture & Internationality)\\n Moderating various workshops to discuss and understand diversity and enhance inclusion.\\n Mentoring and coaching\\nCompensation & Benefit:\\n Salary surveys, salary benchmarking, compensation policies, benefits policies, rewards, medical, insurance.\\n Classifying the wage structure into the different wage components and reducing the organizational cost\\nstrategically.\\n Monitoring the salary structures and identifying the areas of improvement. Taking care of Employee payroll\\nManagement\\nStatutory & Legal Compliances:\\n Overall Statutory and Regulatory Compliances management i.e. PF , ESI, HR Audits as Factories Acts, Labour\\nLaws and ensuring timely compliances under various Acts.\\nGrowth Path\\nSenior HR from May-2022 to till Date\\nM/s. 247 Hire India Pvt Ltd, Trichy, Reporting to Head of HR Handling 2 branches in Trichy and Bangalore\\nAssistant Manager – HR & Admin From 2018 November to April 2022\\nM/s. KSH Automotive Pvt Ltd, Anantapur, Andhra Pradesh (Tier 1 vendor of KIA Motors), Leadership role reporting to GM\\nof HR & Admin\\nAssistant Manager – HR & Admin From 2017 December to June 2018\\nM/s. Inhan Cme Engineering Pvt Ltd., Leadership role Reporting to MD of the Company\\nSr Executive Officer – HR & GA From April 2012 to June 2016\\nM/s. RVS Exports\\nGraphic Analyst From August 2008 to July 2010\\nM/s. HCL Technologies Pvt Ltd.,\\nHR Assistant From May 2007 to July 2008\\nM/s. Mehala Machines India Pvt Ltd- like an internship role reporting to the Manager\\nHighlights\\n Reduced cost in Administration related expenses like – Canteen, Transport and stationery, / Merit of reducing\\nthe recruitment cost by 70%.\\n Created and successfully ran the training for Employees.\\n Significant Key Person for ISO & IATF Audit.\\n Taking care of Legal requirements in all aspects.\\n Presiding officer in POSH Committee\\nAcademic Qualification\\n MBA – Master Of Business Administration in HR, TNOU, Tamilnadu With 80%\\n M.Phil –Master Of Philosophy in Computer Science, Madurai Kamaraj University, Tamilnadu With 80%\\n MCA – Master of Computer Application,from Tamilnadu Open University, Tamilnadu with 75%\\n B.Sc – Bachelor Of Science in Computer Science from Bharathiyar University, Tamilnadu With 75%\\nPersonal Details\\nDate of Birth : 11\\nth\\nApril, 1987\\nLanguages Known : English, Tamil & Telugu\\nPermanent Address : 3-8-4, Main Road, Lakshmipuram, Theni, Tamilnadu-625523\\nPresent Address : L, 3\\nrd\\nFloor, Rajha Plaza, 10\\nth\\nCross A, Thillai Nagar, Trichy -620018\",\n    \"originalLength\": 7751,\n    \"cleanedLength\": 7427\n}"
+            }
+          ]
+        },
+        {
+          "name": "parse",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"rawText\":\"RESUME\\nVishnupriya. R\\nMobile : +91 8508775889\\nE-Mail : vishnupr.priya@gmail.com\\nDedicated professional with skills in streamlining operations and heightening productivity by mastering HR\\nsituations\\n~High Impact Human Resource Management Professional~\\nPROFILE SNAPSHOT\\nCore Competencies with 12 years of experience\\n~Recruitment ~Human Resource Management ~Talent Acquisition\\n~Employee Engagement ~Statutory Compliance ~Training & Development\\n~Compensation & Benefits ~Diversity&Inclusion ~MIS Documentation\\n Gained exposure in managing entire recruitment life cycle for selecting the best talent from diverse\\nsources after identification of manpower requirement.\\n Expertise in designing HR and other related manuals for introducing new and effective schemes for employee\\ndevelopment.\\n Proficient in maintaining harmonious relations between management & employees through efficient\\nadministration, engagement, and resolution of employee grievances.\\n Resourceful in designing, developing & executing various Business-led Programs for enhancing\\norganizational competencies & establishing high performance mindset.\\n Using HRMS Software for updating management staff database, employee benefits\\n Experience in Essl and Easy time Pro kind of Attendance Tracking Software to overseeing attendance records,\\nleaves, LTC, payrolls, personnel files, and records of employees.\\n Skilled in administering smooth implementation of HR policies & system for organizational effectiveness.\\n A methodical professional with a deep sense of ethics and integrity\\nExperience Summary\\nTalent Acquisition\\n• Handle the entire tactical Talent Acquisition process.\\n• Communicate all compensation, benefits & other policies, and formalities properly to candidate.\\n• Finalize offer letters and fitment as per defined matrix\\n• Coordinate with Hod’s for interview schedules.\\n• Resolve any reimbursement/consultant payment related issue\\n• Designing and ensuring proper implementation of GET/MT Program\\nEmployee Engagement Activities\\n• Finalize the annual engagement calendar.Track and highlight engagement budget variances\\n• Executes employee engagement surveys basis identified levers to be measured and coordinate with the\\nexternal partner for survey floating and implementation.\\n• Execute events as per Annual engagement Calendar. (e.g. Town hall meeting, Birthday celebration, Safety\\nweek, Kaizen Competition, Circle Meetings, Blood donation camp. Health checkup camps, Family get together\\nEtc.)\\n• Coordination of various Engagement committee meetings. (POSH/ Canteen/Sports/ safety) Member of IC\\ncommittee.\\nPerformance Management\\n• Communicate, resolve queries, and drive cascade through KRA/goal setting principles in terms of SMART\\n(specific, measurable, achievable, realistic, and timely) goals, objective measurement parameters, goal\\nweightage etc.\\n• Coordinate for completion of Mid-year and end year reviews.\\n• Ensure expectations and feedback from multiple stakeholders during the performance review process are\\ntaken during rating normalization and rewards linkage decisions\\n• Drive capability building of managers and employees in having performance and feedback conversations to\\nbuild the skill around the system\\nOnboarding & offboarding Formalities\\n• HRMS entry/ document verification/ organization announcement of new joiner.\\n• Induction & Orientation of new joiner\\n• Exit interview of resigned employee.\\n• Separation action & relieving letters of left employees.\\nMIS (Management Information System) & Audit Support\\n Preparing and maintaining the MIS reports and submitting the same to the decision-making panel of\\nthe organization for fine tuning the business strategies.\\n Responsible for various customer & internal Audits (Eg. IATF, EHS, OHSAS, ISO, 5S)\\nWelfare Activities\\n Conduct all welfare activities as per employee welfare calendar, in collaboration with Union and other\\nemployee committees (Eg. Shoes/ uniform/ Medical checkups/ etc.)\\n Ensure transportation, Canteen, Medical facilities are run as per policy and guidelines.\\nOrganization Design & Manpower Planning\\n Support in data collection and implementation of relevant Manpower Planning techniques medical facilities\\nfor self and family of employees\\n Ensure updation of organization charts as and when required as per decisions and policies.\\n Ensure approvals for MPRs for recruitment as per manpower plan and authority level/matrix\\n Measure the impact of Attraction and Retention initiatives taken and prepare reports along with Attrition\\nnumbers to present to senior stakeholders\\nDriving and Execution of HR Policies/SOPs:\\n Set up and Execution of HR Policies within the Organization\\n Communicating HR policies & procedures across organization like Leave, Travel, Mediclaim, Induction,\\nRecruitments, Exit, Welfare, Ethics, Code of Conduct etc.\\n Employee Engagement Activities.\\nDiversity and Inclusion\\n Driving and initiating various diversity initiatives (Gender, Generation, Culture & Internationality)\\n Moderating various workshops to discuss and understand diversity and enhance inclusion.\\n Mentoring and coaching\\nCompensation & Benefit:\\n Salary surveys, salary benchmarking, compensation policies, benefits policies, rewards, medical, insurance.\\n Classifying the wage structure into the different wage components and reducing the organizational cost\\nstrategically.\\n Monitoring the salary structures and identifying the areas of improvement. Taking care of Employee payroll\\nManagement\\nStatutory & Legal Compliances:\\n Overall Statutory and Regulatory Compliances management i.e. PF , ESI, HR Audits as Factories Acts, Labour\\nLaws and ensuring timely compliances under various Acts.\\nGrowth Path\\nSenior HR from May-2022 to till Date\\nM/s. 247 Hire India Pvt Ltd, Trichy, Reporting to Head of HR Handling 2 branches in Trichy and Bangalore\\nAssistant Manager – HR & Admin From 2018 November to April 2022\\nM/s. KSH Automotive Pvt Ltd, Anantapur, Andhra Pradesh (Tier 1 vendor of KIA Motors), Leadership role reporting to GM\\nof HR & Admin\\nAssistant Manager – HR & Admin From 2017 December to June 2018\\nM/s. Inhan Cme Engineering Pvt Ltd., Leadership role Reporting to MD of the Company\\nSr Executive Officer – HR & GA From April 2012 to June 2016\\nM/s. RVS Exports\\nGraphic Analyst From August 2008 to July 2010\\nM/s. HCL Technologies Pvt Ltd.,\\nHR Assistant From May 2007 to July 2008\\nM/s. Mehala Machines India Pvt Ltd- like an internship role reporting to the Manager\\nHighlights\\n Reduced cost in Administration related expenses like – Canteen, Transport and stationery, / Merit of reducing\\nthe recruitment cost by 70%.\\n Created and successfully ran the training for Employees.\\n Significant Key Person for ISO & IATF Audit.\\n Taking care of Legal requirements in all aspects.\\n Presiding officer in POSH Committee\\nAcademic Qualification\\n MBA – Master Of Business Administration in HR, TNOU, Tamilnadu With 80%\\n M.Phil –Master Of Philosophy in Computer Science, Madurai Kamaraj University, Tamilnadu With 80%\\n MCA – Master of Computer Application,from Tamilnadu Open University, Tamilnadu with 75%\\n B.Sc – Bachelor Of Science in Computer Science from Bharathiyar University, Tamilnadu With 75%\\nPersonal Details\\nDate of Birth : 11\\nth\\nApril, 1987\\nLanguages Known : English, Tamil & Telugu\\nPermanent Address : 3-8-4, Main Road, Lakshmipuram, Theni, Tamilnadu-625523\\nPresent Address : L, 3\\nrd\\nFloor, Rajha Plaza, 10\\nth\\nCross A, Thillai Nagar, Trichy -620018\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/parse",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "parse"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"pdfBase64\": \"JVBERi0xLjUNJcjIyMjIyMgNMSAwIG9iago8PC9UeXBlL0NhdGFsb2cvUGFnZXMgMiAwIFIvTGFuZyhlbi1VUykvT3V0bGluZXMgMjg4IDAgUi9TdHJ1Y3RUcmVlUm9vdCAzIDAgUi9NYXJrSW5mbzw8L01hcmtlZCB0cnVlPj4vTWV0YWRhdGEgMjg5IDAgUj4+DQplbmRvYmoKMiAwIG9iago8PC9UeXBlL1BhZ2VzL0tpZHNbNSAwIFIgNiAwIFIgNyAwIFJdL0NvdW50IDM+Pg0KZW5kb2JqCjMgMCBvYmoKPDwvVHlwZS9TdHJ1Y3RUcmVlUm9vdC9Sb2xlTWFwIDQgMCBSL0tbNjMgMCBSXS9QYXJlbnRUcmVlIDY1IDAgUi9QYXJlbnRUcmVlTmV4dEtleSA0Pj4NCmVuZG9iago0IDAgb2JqCjw8L0Zvb3Rub3RlL05vdGUvRW5kbm90ZS9Ob3RlL1RleHRib3gvU2VjdC9IZWFkZXIvU2VjdC9Gb290ZXIvU2VjdC9JbmxpbmVTaGFwZS9TZWN0L0Fubm90YXRpb24vU2VjdC9BcnRpZmFjdC9TZWN0L1dvcmtib29rL0RvY3VtZW50L1dvcmtzaGVldC9QYXJ0L01hY3Jvc2hlZXQvUGFydC9DaGFydHNoZWV0L1BhcnQvRGlhbG9nc2hlZXQvUGFydC9TbGlkZS9QYXJ0L0NoYXJ0L1NlY3QvRGlhZ3JhbS9GaWd1cmU+Pg0KZW5kb2JqCjUgMCBvYmoKPDwvVHlwZS9QYWdlL01lZGlhQm94WzAgMCA2MTIgNzkyXS9SZXNvdXJjZXM8PC9Gb250PDwvRjEgOCAwIFIvRjIg\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/extract",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "extract"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "embed",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"rawText\": \"RESUME\\nVishnupriya. R\\nMobile : +91 8508775889\\nE-Mail : vishnupr.priya@gmail.com\\nDedicated professional with skills in streamlining operations and heightening productivity by mastering HR\\nsituations\\n~High Impact Human Resource Management Professional~\\nPROFILE SNAPSHOT\\nCore Competencies with 12 years of experience\\n~Recruitment ~Human Resource Management ~Talent Acquisition\\n~Employee Engagement ~Statutory Compliance ~Training & Development\\n~Compensation & Benefits ~Diversity&Inclusion ~MIS Documentation\\n Gained exposure in managing entire recruitment life cycle for selecting the best talent from diverse\\nsources after identification of manpower requirement.\\n Expertise in designing HR and other related manuals for introducing new and effective schemes for employee\\ndevelopment.\\n Proficient in maintaining harmonious relations between management & employees through efficient\\nadministration, engagement, and resolution of employee grievances.\\n Resourceful in designing, developing & executing various Business-led Programs for enhancing\\norganizational competencies & establishing high performance mindset.\\n Using HRMS Software for updating management staff database, employee benefits\\n Experience in Essl and Easy time Pro kind of Attendance Tracking Software to overseeing attendance records,\\nleaves, LTC, payrolls, personnel files, and records of employees.\\n Skilled in administering smooth implementation of HR policies & system for organizational effectiveness.\\n A methodical professional with a deep sense of ethics and integrity\\nExperience Summary\\nTalent Acquisition\\n• Handle the entire tactical Talent Acquisition process.\\n• Communicate all compensation, benefits & other policies, and formalities properly to candidate.\\n• Finalize offer letters and fitment as per defined matrix\\n• Coordinate with Hod’s for interview schedules.\\n• Resolve any reimbursement/consultant payment related issue\\n• Designing and ensuring proper implementation of GET/MT Program\\nEmployee Engagement Activities\\n• Finalize the annual engagement calendar.Track and highlight engagement budget variances\\n• Executes employee engagement surveys basis identified levers to be measured and coordinate with the\\nexternal partner for survey floating and implementation.\\n• Execute events as per Annual engagement Calendar. (e.g. Town hall meeting, Birthday celebration, Safety\\nweek, Kaizen Competition, Circle Meetings, Blood donation camp. Health checkup camps, Family get together\\nEtc.)\\n• Coordination of various Engagement committee meetings. (POSH/ Canteen/Sports/ safety) Member of IC\\ncommittee.\\nPerformance Management\\n• Communicate, resolve queries, and drive cascade through KRA/goal setting principles in terms of SMART\\n(specific, measurable, achievable, realistic, and timely) goals, objective measurement parameters, goal\\nweightage etc.\\n• Coordinate for completion of Mid-year and end year reviews.\\n• Ensure expectations and feedback from multiple stakeholders during the performance review process are\\ntaken during rating normalization and rewards linkage decisions\\n• Drive capability building of managers and employees in having performance and feedback conversations to\\nbuild the skill around the system\\nOnboarding & offboarding Formalities\\n• HRMS entry/ document verification/ organization announcement of new joiner.\\n• Induction & Orientation of new joiner\\n• Exit interview of resigned employee.\\n• Separation action & relieving letters of left employees.\\nMIS (Management Information System) & Audit Support\\n Preparing and maintaining the MIS reports and submitting the same to the decision-making panel of\\nthe organization for fine tuning the business strategies.\\n Responsible for various customer & internal Audits (Eg. IATF, EHS, OHSAS, ISO, 5S)\\nWelfare Activities\\n Conduct all welfare activities as per employee welfare calendar, in collaboration with Union and other\\nemployee committees (Eg. Shoes/ uniform/ Medical checkups/ etc.)\\n Ensure transportation, Canteen, Medical facilities are run as per policy and guidelines.\\nOrganization Design & Manpower Planning\\n Support in data collection and implementation of relevant Manpower Planning techniques medical facilities\\nfor self and family of employees\\n Ensure updation of organization charts as and when required as per decisions and policies.\\n Ensure approvals for MPRs for recruitment as per manpower plan and authority level/matrix\\n Measure the impact of Attraction and Retention initiatives taken and prepare reports along with Attrition\\nnumbers to present to senior stakeholders\\nDriving and Execution of HR Policies/SOPs:\\n Set up and Execution of HR Policies within the Organization\\n Communicating HR policies & procedures across organization like Leave, Travel, Mediclaim, Induction,\\nRecruitments, Exit, Welfare, Ethics, Code of Conduct etc.\\n Employee Engagement Activities.\\nDiversity and Inclusion\\n Driving and initiating various diversity initiatives (Gender, Generation, Culture & Internationality)\\n Moderating various workshops to discuss and understand diversity and enhance inclusion.\\n Mentoring and coaching\\nCompensation & Benefit:\\n Salary surveys, salary benchmarking, compensation policies, benefits policies, rewards, medical, insurance.\\n Classifying the wage structure into the different wage components and reducing the organizational cost\\nstrategically.\\n Monitoring the salary structures and identifying the areas of improvement. Taking care of Employee payroll\\nManagement\\nStatutory & Legal Compliances:\\n Overall Statutory and Regulatory Compliances management i.e. PF , ESI, HR Audits as Factories Acts, Labour\\nLaws and ensuring timely compliances under various Acts.\\nGrowth Path\\nSenior HR from May-2022 to till Date\\nM/s. 247 Hire India Pvt Ltd, Trichy, Reporting to Head of HR Handling 2 branches in Trichy and Bangalore\\nAssistant Manager – HR & Admin From 2018 November to April 2022\\nM/s. KSH Automotive Pvt Ltd, Anantapur, Andhra Pradesh (Tier 1 vendor of KIA Motors), Leadership role reporting to GM\\nof HR & Admin\\nAssistant Manager – HR & Admin From 2017 December to June 2018\\nM/s. Inhan Cme Engineering Pvt Ltd., Leadership role Reporting to MD of the Company\\nSr Executive Officer – HR & GA From April 2012 to June 2016\\nM/s. RVS Exports\\nGraphic Analyst From August 2008 to July 2010\\nM/s. HCL Technologies Pvt Ltd.,\\nHR Assistant From May 2007 to July 2008\\nM/s. Mehala Machines India Pvt Ltd- like an internship role reporting to the Manager\\nHighlights\\n Reduced cost in Administration related expenses like – Canteen, Transport and stationery, / Merit of reducing\\nthe recruitment cost by 70%.\\n Created and successfully ran the training for Employees.\\n Significant Key Person for ISO & IATF Audit.\\n Taking care of Legal requirements in all aspects.\\n Presiding officer in POSH Committee\\nAcademic Qualification\\n MBA – Master Of Business Administration in HR, TNOU, Tamilnadu With 80%\\n M.Phil –Master Of Philosophy in Computer Science, Madurai Kamaraj University, Tamilnadu With 80%\\n MCA – Master of Computer Application,from Tamilnadu Open University, Tamilnadu with 75%\\n B.Sc – Bachelor Of Science in Computer Science from Bharathiyar University, Tamilnadu With 75%\\nPersonal Details\\nDate of Birth : 11\\nth\\nApril, 1987\\nLanguages Known : English, Tamil & Telugu\\nPermanent Address : 3-8-4, Main Road, Lakshmipuram, Theni, Tamilnadu-625523\\nPresent Address : L, 3\\nrd\\nFloor, Rajha Plaza, 10\\nth\\nCross A, Thillai Nagar, Trichy -620018\", \"model\":\"mistral-embed\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/embed",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "embed"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"RESUME\",\n    \"email\": \"vishnupr.priya@gmail.com\",\n    \"phone\": \"+918508775889\",\n    \"location\": \"Bangalore\",\n    \"skills\": [\n            \"in streamlining operations and heightening productivity by mastering HR\"\n        ],\n    \"company\": \"skills in streamlining operations and heightening productivity by mastering HR\",\n    \"role\": \"reporting to GM\",\n    \"education\": \"be\",\n    \"totalExperience\": 12,\n    \"summary\": \"RESUME Vishnupriya. R Mobile : +91 8508775889 E-Mail : vishnupr.priya@gmail.com\",\n    \"embedding\": [\n        -0.0239410400390625,\n        0.002841949462890625,\n        0.05133056640625,\n        -0.00521087646484375,\n        -0.0133514404296875,\n        -0.00701904296875,\n        0.0258331298828125,\n        -0.0016689300537109375,\n        0.0003230571746826172,\n        -0.00327301025390625,\n        -0.0125732421875,\n        0.0733642578125,\n        -0.01317596435546875,\n        -0.021881103515625,\n        -0.0640869140625,\n        0.0242919921875,\n        -0.025146484375,\n        0.049957275390625,\n        0.0306549072265625,\n        -0.00411224365234375,\n        -0.017822265625,\n        -0.035491943359375,\n        -0.057525634765625,\n        -0.0260162353515625,\n        -0.0039825439453125,\n        -0.0010547637939453125,\n        -0.030487060546875,\n        -0.033233642578125,\n        -0.028076171875,\n        0.021270751953125,\n        0.014556884765625,\n        -0.034454345703125,\n        0.01506805419921875,\n        0.038055419921875,\n        0.0318603515625,\n        -0.0249786376953125,\n        -0.0272216796875,\n        -0.06646728515625,\n        0.00830841064453125,\n        0.042724609375,\n        -0.0031871795654296875,\n        -0.0109405517578125,\n        -0.005146026611328125,\n        -0.005725860595703125,\n        -0.03668212890625,\n        0.006805419921875,\n        0.013519287109375,\n        -0.00641632080078125,\n        0.005985260009765625,\n        -0.017059326171875,\n        0.033935546875,\n        0.050628662109375,\n        0.017486572265625,\n        -0.006805419921875,\n        -0.026519775390625,\n        0.0482177734375,\n        -0.0171356201171875,\n        -0.0214385986328125,\n        0.005855560302734375,\n        0.035308837890625,\n        -0.054779052734375,\n        0.004909515380859375,\n        -0.0234222412109375,\n        -0.022735595703125,\n        0.0272216796875,\n        0.044769287109375,\n        0.0249786376953125,\n        -0.028076171875,\n        0.01532745361328125,\n        -0.00290679931640625,\n        0.037384033203125,\n        -0.0125732421875,\n        -0.00374603271484375,\n        0.002841949462890625,\n        -0.04547119140625,\n        -0.055816650390625,\n        0.0167999267578125,\n        0.04376220703125,\n        0.0244598388671875,\n        -0.0096435546875,\n        -0.02410888671875,\n        -0.044097900390625,\n        0.09716796875,\n        -0.03271484375,\n        -0.029632568359375,\n        0.0272216796875,\n        0.0201568603515625,\n        -0.017913818359375,\n        0.0253143310546875,\n        0.0263519287109375,\n        0.03564453125,\n        -0.0005435943603515625,\n        0.020843505859375,\n        -0.007450103759765625,\n        0.028594970703125,\n        0.0247955322265625,\n        -0.0008721351623535156,\n        0.016357421875,\n        -0.01171112060546875,\n        0.0273895263671875,\n        0.0418701171875,\n        -0.019287109375,\n        0.07958984375,\n        0.00594329833984375,\n        0.027557373046875,\n        -0.01947021484375,\n        0.02410888671875,\n        0.0132598876953125,\n        0.022735595703125,\n        -0.0247955322265625,\n        -0.060272216796875,\n        -0.0268707275390625,\n        -0.0089569091796875,\n        -0.060272216796875,\n        -0.00628662109375,\n        -0.00960540771484375,\n        -0.021270751953125,\n        0.06512451171875,\n        -0.0692138671875,\n        -0.043060302734375,\n        0.01593017578125,\n        0.012054443359375,\n        -0.016357421875,\n        -0.002712249755859375,\n        -0.0311737060546875,\n        -0.0213623046875,\n        0.0080108642578125,\n        0.054443359375,\n        -0.022735595703125,\n        -0.060638427734375,\n        -0.0215301513671875,\n        0.011627197265625,\n        -0.01214599609375,\n        -0.0311737060546875,\n        0.00013184547424316406,\n        -0.0306549072265625,\n        0.034271240234375,\n        -0.02703857421875,\n        0.0021209716796875,\n        -0.052703857421875,\n        0.039947509765625,\n        -0.048583984375,\n        -0.0389404296875,\n        -0.01154327392578125,\n        0.01446533203125,\n        0.00762176513671875,\n        -0.0242919921875,\n        -0.01265716552734375,\n        -0.0125732421875,\n        -0.004413604736328125,\n        -0.028594970703125,\n        0.022735595703125,\n        0.055816650390625,\n        0.021881103515625,\n        -0.0273895263671875,\n        -0.033599853515625,\n        -0.01515960693359375,\n        -0.036529541015625,\n        0.036865234375,\n        -0.018768310546875,\n        -0.016357421875,\n        0.031005859375,\n        -0.01971435546875,\n        0.055816650390625,\n        -0.03204345703125,\n        -0.046844482421875,\n        -0.0279083251953125,\n        0.0058135986328125,\n        -0.026702880859375,\n        -0.003444671630859375,\n        0.02911376953125,\n        -0.033599853515625,\n        0.0258331298828125,\n        0.0657958984375,\n        -0.049957275390625,\n        0.036346435546875,\n        0.0104217529296875,\n        -0.0206756591796875,\n        0.07440185546875,\n        0.038238525390625,\n        0.00518798828125,\n        0.00011169910430908203,\n        0.0540771484375,\n        0.01464080810546875,\n        -0.00589752197265625,\n        -0.0268707275390625,\n        -0.0195465087890625,\n        -0.0152435302734375,\n        0.02996826171875,\n        0.036346435546875,\n        -0.01265716552734375,\n        -0.053741455078125,\n        -0.06097412109375,\n        -0.025665283203125,\n        0.0213623046875,\n        0.045135498046875,\n        0.069580078125,\n        -0.047882080078125,\n        0.026702880859375,\n        -0.00445556640625,\n        0.01274871826171875,\n        -0.0037899017333984375,\n        -0.005489349365234375,\n        0.07684326171875,\n        0.041168212890625,\n        0.01654052734375,\n        0.01222991943359375,\n        0.059600830078125,\n        -0.00015211105346679688,\n        -0.0011949539184570312,\n        -0.005985260009765625,\n        0.01421356201171875,\n        -0.0292816162109375,\n        -0.01128387451171875,\n        -0.0273895263671875,\n        -0.05511474609375,\n        -0.0249786376953125,\n        0.0011301040649414062,\n        -0.0030574798583984375,\n        -0.0037899017333984375,\n        0.007663726806640625,\n        -0.07440185546875,\n        -0.00363922119140625,\n        -0.01739501953125,\n        0.0142974853515625,\n        0.0347900390625,\n        0.0523681640625,\n        -0.025665283203125,\n        -0.02996826171875,\n        0.032562255859375,\n        -0.0103759765625,\n        0.04443359375,\n        -0.019805908203125,\n        0.0080108642578125,\n        -0.0029277801513671875,\n        -0.023773193359375,\n        0.0306549072265625,\n        0.0223846435546875,\n        0.007190704345703125,\n        -0.01532745361328125,\n        -0.0273895263671875,\n        0.050628662109375,\n        0.005146026611328125,\n        0.051666259765625,\n        -0.0019483566284179688,\n        -0.0182647705078125,\n        -0.0258331298828125,\n        -0.01300811767578125,\n        0.028076171875,\n        0.0181732177734375,\n        -0.0943603515625,\n        -0.049591064453125,\n        -0.04547119140625,\n        -0.0167083740234375,\n        -0.0482177734375,\n        -0.0190277099609375,\n        -0.038421630859375,\n        -0.0137786865234375,\n        0.0195465087890625,\n        -0.0118865966796875,\n        -0.0247955322265625,\n        -0.009002685546875,\n        0.0303192138671875,\n        0.007534027099609375,\n        0.01128387451171875,\n        0.035125732421875,\n        -0.042724609375,\n        -0.01071929931640625,\n        0.07098388671875,\n        0.004974365234375,\n        0.01300811767578125,\n        -0.007106781005859375,\n        0.01248931884765625,\n        -0.0289306640625,\n        -0.01739501953125,\n        -0.0249786376953125,\n        0.020233154296875,\n        0.0205841064453125,\n        0.01947021484375,\n        0.0018301010131835938,\n        -0.058563232421875,\n        -0.006072998046875,\n        -0.0010929107666015625,\n        0.0176544189453125,\n        -0.02410888671875,\n        -0.003314971923828125,\n        0.0032291412353515625,\n        -0.0230865478515625,\n        -0.031524658203125,\n        -0.053741455078125,\n        0.03375244140625,\n        0.048583984375,\n        0.029632568359375,\n        0.0161895751953125,\n        -0.01145172119140625,\n        -0.00994873046875,\n        0.032379150390625,\n        0.0128326416015625,\n        -0.0067596435546875,\n        0.03497314453125,\n        0.028076171875,\n        -0.03961181640625,\n        0.007579803466796875,\n        -0.00521087646484375,\n        0.05889892578125,\n        -0.0482177734375,\n        -0.04083251953125,\n        0.0011844635009765625,\n        -0.0230865478515625,\n        -0.0277252197265625,\n        -0.014984130859375,\n        0.0219573974609375,\n        -0.00555419921875,\n        -0.00809478759765625,\n        0.00921630859375,\n        -0.01386260986328125,\n        -0.042724609375,\n        -0.022735595703125,\n        0.03204345703125,\n        -0.038055419921875,\n        -0.025665283203125,\n        0.026519775390625,\n        0.05029296875,\n        -0.052032470703125,\n        0.0167083740234375,\n        0.0195465087890625,\n        -0.0182647705078125,\n        -0.028076171875,\n        0.0213623046875,\n        -0.01197052001953125,\n        0.00998687744140625,\n        -0.0018949508666992188,\n        0.00951385498046875,\n        0.03875732421875,\n        0.0360107421875,\n        0.00861358642578125,\n        0.0465087890625,\n        0.03790283203125,\n        -0.06341552734375,\n        -0.0104217529296875,\n        0.0012378692626953125,\n        -0.01412200927734375,\n        0.031524658203125,\n        0.0072784423828125,\n        0.00411224365234375,\n        -0.0244598388671875,\n        -0.0435791015625,\n        0.03582763671875,\n        0.0389404296875,\n        0.00437164306640625,\n        0.04443359375,\n        -0.017059326171875,\n        -0.017486572265625,\n        0.0640869140625,\n        0.0169677734375,\n        0.0909423828125,\n        -0.0330810546875,\n        -0.04718017578125,\n        -0.0032291412353515625,\n        0.02703857421875,\n        -0.041351318359375,\n        -0.030487060546875,\n        0.0268707275390625,\n        0.020416259765625,\n        0.0186004638671875,\n        0.0263519287109375,\n        -0.01739501953125,\n        0.037384033203125,\n        0.004650115966796875,\n        -0.01386260986328125,\n        0.00041174888610839844,\n        0.01076507568359375,\n        0.037200927734375,\n        0.0540771484375,\n        0.00792694091796875,\n        0.0022602081298828125,\n        -0.0030574798583984375,\n        -0.0244598388671875,\n        -0.01265716552734375,\n        -0.030487060546875,\n        -0.01421356201171875,\n        0.0211029052734375,\n        0.00930023193359375,\n        0.005405426025390625,\n        -0.004241943359375,\n        -0.0172271728515625,\n        -0.08026123046875,\n        0.02093505859375,\n        -0.0167083740234375,\n        0.043060302734375,\n        0.043243408203125,\n        0.0292816162109375,\n        0.0306549072265625,\n        0.0113677978515625,\n        0.0009851455688476562,\n        0.03875732421875,\n        -0.0155029296875,\n        0.0360107421875,\n        0.043243408203125,\n        0.0034885406494140625,\n        -0.0039825439453125,\n        -0.04925537109375,\n        0.04046630859375,\n        0.02117919921875,\n        0.01421356201171875,\n        0.0306549072265625,\n        -0.0058135986328125,\n        -0.007534027099609375,\n        -0.00960540771484375,\n        -0.0118865966796875,\n        0.042205810546875,\n        0.06268310546875,\n        -0.0123138427734375,\n        0.0017976760864257812,\n        -0.0013132095336914062,\n        0.030487060546875,\n        -0.027557373046875,\n        0.0186004638671875,\n        -0.01050567626953125,\n        0.005985260009765625,\n        -0.02325439453125,\n        -0.0125732421875,\n        -0.01145172119140625,\n        -0.021881103515625,\n        0.049591064453125,\n        -0.048919677734375,\n        -0.0148162841796875,\n        -0.004566192626953125,\n        -0.023590087890625,\n        0.034454345703125,\n        -0.04168701171875,\n        -0.046173095703125,\n        0.05718994140625,\n        -0.0234222412109375,\n        -0.025665283203125,\n        0.04046630859375,\n        0.0229034423828125,\n        -0.06683349609375,\n        -0.0091705322265625,\n        -0.03790283203125,\n        -0.00030684471130371094,\n        -0.04376220703125,\n        -0.0081787109375,\n        0.0377197265625,\n        -0.02410888671875,\n        -0.00775146484375,\n        0.006114959716796875,\n        0.0249786376953125,\n        0.01214599609375,\n        -0.033416748046875,\n        0.00775146484375,\n        -0.01128387451171875,\n        -0.0049285888671875,\n        0.031524658203125,\n        0.047882080078125,\n        0.0225677490234375,\n        -0.03564453125,\n        -0.020233154296875,\n        -0.002002716064453125,\n        -0.02093505859375,\n        0.033935546875,\n        0.022735595703125,\n        -0.031707763671875,\n        -0.055816650390625,\n        -0.0140380859375,\n        0.045806884765625,\n        0.0142974853515625,\n        0.045806884765625,\n        -0.036346435546875,\n        -0.03790283203125,\n        0.00014066696166992188,\n        -0.0263519287109375,\n        -0.049957275390625,\n        0.0117950439453125,\n        -0.00809478759765625,\n        0.0019378662109375,\n        0.0523681640625,\n        -0.0301361083984375,\n        -0.03460693359375,\n        -0.0230865478515625,\n        0.07232666015625,\n        0.0229034423828125,\n        0.0133514404296875,\n        -0.037017822265625,\n        0.0166168212890625,\n        0.01274871826171875,\n        -0.0771484375,\n        -0.052703857421875,\n        -0.002948760986328125,\n        -0.006847381591796875,\n        0.0330810546875,\n        -0.023773193359375,\n        -0.00555419921875,\n        -0.05029296875,\n        -0.03564453125,\n        -0.03564453125,\n        0.002368927001953125,\n        -0.032562255859375,\n        -0.037200927734375,\n        0.0103759765625,\n        0.0260162353515625,\n        0.0025730133056640625,\n        0.0284271240234375,\n        -0.005596160888671875,\n        -0.019805908203125,\n        0.00688934326171875,\n        0.0244598388671875,\n        -0.0657958984375,\n        0.02618408203125,\n        -0.043060302734375,\n        -0.0171356201171875,\n        -0.0038318634033203125,\n        0.006244659423828125,\n        -0.02410888671875,\n        -0.00542449951171875,\n        -0.010589599609375,\n        -0.036163330078125,\n        0.0113677978515625,\n        -0.038055419921875,\n        0.0176544189453125,\n        -0.01800537109375,\n        0.033233642578125,\n        -0.056488037109375,\n        -0.0195465087890625,\n        0.017822265625,\n        0.04925537109375,\n        0.0175628662109375,\n        -0.044097900390625,\n        0.02703857421875,\n        -0.044097900390625,\n        -0.0160980224609375,\n        0.0167083740234375,\n        -0.0211029052734375,\n        0.00641632080078125,\n        0.004154205322265625,\n        0.0002071857452392578,\n        0.035308837890625,\n        0.018951416015625,\n        -0.018768310546875,\n        0.00804901123046875,\n        -0.06268310546875,\n        -0.026519775390625,\n        0.002529144287109375,\n        -0.02618408203125,\n        -0.011627197265625,\n        -0.0242919921875,\n        -0.055450439453125,\n        0.025665283203125,\n        0.0005331039428710938,\n        0.0035305023193359375,\n        -0.01076507568359375,\n        -0.03375244140625,\n        0.0065460205078125,\n        -0.044769287109375,\n        -0.01003265380859375,\n        0.006458282470703125,\n        -0.038055419921875,\n        -0.0032939910888671875,\n        -0.0171356201171875,\n        -0.0210113525390625,\n        0.034271240234375,\n        -0.00421905517578125,\n        0.039276123046875,\n        0.02032470703125,\n        0.03375244140625,\n        -0.03204345703125,\n        0.026702880859375,\n        -0.0244598388671875,\n        -0.0308380126953125,\n        -0.002971649169921875,\n        -0.029632568359375,\n        0.0166168212890625,\n        -0.0215301513671875,\n        -0.03271484375,\n        0.0282440185546875,\n        0.0640869140625,\n        0.03753662109375,\n        0.01145172119140625,\n        -0.0128326416015625,\n        -0.00667572021484375,\n        0.040130615234375,\n        0.0152435302734375,\n        -0.02178955078125,\n        -0.025665283203125,\n        -0.0298004150390625,\n        -0.02117919921875,\n        0.05511474609375,\n        0.0254974365234375,\n        0.000021696090698242188,\n        -0.02618408203125,\n        -0.01369476318359375,\n        0.052032470703125,\n        -0.0199737548828125,\n        -0.02325439453125,\n        -0.054779052734375,\n        -0.000014960765838623047,\n        0.0292816162109375,\n        0.038055419921875,\n        0.029632568359375,\n        0.056488037109375,\n        0.0186004638671875,\n        -0.0096893310546875,\n        0.014556884765625,\n        0.061676025390625,\n        0.0308380126953125,\n        -0.0176544189453125,\n        -0.06439208984375,\n        -0.03875732421875,\n        0.0204925537109375,\n        -0.02911376953125,\n        -0.04754638671875,\n        -0.01154327392578125,\n        0.032562255859375,\n        -0.0833740234375,\n        -0.038421630859375,\n        0.0287628173828125,\n        -0.00025844573974609375,\n        0.012054443359375,\n        0.022735595703125,\n        0.0034885406494140625,\n        0.03460693359375,\n        -0.0147247314453125,\n        -0.03668212890625,\n        -0.030487060546875,\n        -0.0013723373413085938,\n        -0.016357421875,\n        0.0712890625,\n        -0.03497314453125,\n        -0.0033588409423828125,\n        0.00848388671875,\n        -0.005596160888671875,\n        0.040985107421875,\n        -0.028594970703125,\n        0.0482177734375,\n        0.0045013427734375,\n        0.00641632080078125,\n        0.0303192138671875,\n        0.054443359375,\n        -0.01033782958984375,\n        0.00882720947265625,\n        -0.0084381103515625,\n        0.05133056640625,\n        0.042877197265625,\n        0.053741455078125,\n        0.007965087890625,\n        -0.004756927490234375,\n        0.01024627685546875,\n        -0.0301361083984375,\n        -0.01800537109375,\n        0.0268707275390625,\n        0.0123138427734375,\n        0.0013132095336914062,\n        -0.03271484375,\n        -0.0268707275390625,\n        -0.0273895263671875,\n        0.0220489501953125,\n        0.049957275390625,\n        -0.043914794921875,\n        -0.0249786376953125,\n        0.016357421875,\n        -0.0303192138671875,\n        -0.07989501953125,\n        0.0435791015625,\n        -0.0287628173828125,\n        -0.01214599609375,\n        -0.06341552734375,\n        -0.069580078125,\n        0.0253143310546875,\n        -0.04443359375,\n        -0.0657958984375,\n        -0.016021728515625,\n        0.04443359375,\n        -0.0199737548828125,\n        -0.007061004638671875,\n        -0.0284271240234375,\n        -0.00998687744140625,\n        -0.003810882568359375,\n        0.00589752197265625,\n        -0.057525634765625,\n        0.0196380615234375,\n        -0.0012216567993164062,\n        -0.006114959716796875,\n        0.04339599609375,\n        0.0028209686279296875,\n        0.00495147705078125,\n        0.000324249267578125,\n        -0.01029205322265625,\n        -0.0067596435546875,\n        0.025146484375,\n        0.01214599609375,\n        0.045135498046875,\n        0.00047898292541503906,\n        0.0123138427734375,\n        0.01739501953125,\n        0.04376220703125,\n        0.004974365234375,\n        0.00809478759765625,\n        -0.032196044921875,\n        -0.060638427734375,\n        -0.0213623046875,\n        0.006587982177734375,\n        0.0318603515625,\n        -0.0523681640625,\n        0.005641937255859375,\n        0.062347412109375,\n        -0.040130615234375,\n        0.023773193359375,\n        0.0011568069458007812,\n        0.013519287109375,\n        -0.00180816650390625,\n        -0.01369476318359375,\n        -0.0157623291015625,\n        0.0047149658203125,\n        0.036529541015625,\n        -0.013519287109375,\n        -0.028594970703125,\n        0.04547119140625,\n        -0.037017822265625,\n        0.023773193359375,\n        -0.01197052001953125,\n        -0.022216796875,\n        -0.06097412109375,\n        -0.0132598876953125,\n        0.00701904296875,\n        -0.04754638671875,\n        -0.003574371337890625,\n        -0.0809326171875,\n        0.0137786865234375,\n        0.032379150390625,\n        -0.0308380126953125,\n        0.006328582763671875,\n        0.0160980224609375,\n        0.017486572265625,\n        -0.0018520355224609375,\n        -0.077880859375,\n        0.003963470458984375,\n        -0.020416259765625,\n        -0.00426483154296875,\n        -0.057861328125,\n        -0.04718017578125,\n        -0.036163330078125,\n        -0.050994873046875,\n        -0.050994873046875,\n        -0.0010499954223632812,\n        0.00011974573135375977,\n        0.0181732177734375,\n        -0.0204925537109375,\n        -0.004047393798828125,\n        -0.005275726318359375,\n        0.03582763671875,\n        -0.00882720947265625,\n        -0.00667572021484375,\n        -0.0406494140625,\n        -0.02410888671875,\n        -0.0306549072265625,\n        0.0244598388671875,\n        0.0220489501953125,\n        0.03790283203125,\n        -0.028076171875,\n        0.0311737060546875,\n        0.0160980224609375,\n        -0.054443359375,\n        0.0423583984375,\n        0.05340576171875,\n        -0.01506805419921875,\n        -0.040313720703125,\n        -0.0272216796875,\n        -0.01119232177734375,\n        0.0158538818359375,\n        -0.0176544189453125,\n        0.0211029052734375,\n        -0.005855560302734375,\n        -0.01464080810546875,\n        -0.09234619140625,\n        0.042724609375,\n        -0.0223846435546875,\n        -0.00835418701171875,\n        0.0018301010131835938,\n        -0.0206756591796875,\n        -0.055450439453125,\n        -0.07098388671875,\n        -0.003875732421875,\n        0.020233154296875,\n        -0.00615692138671875,\n        0.04925537109375,\n        -0.01071929931640625,\n        -0.01464080810546875,\n        0.009002685546875,\n        0.01024627685546875,\n        0.00904083251953125,\n        0.00301361083984375,\n        0.01222991943359375,\n        -0.0225677490234375,\n        0.061309814453125,\n        -0.012054443359375,\n        -0.034271240234375,\n        -0.0253143310546875,\n        0.0015716552734375,\n        -0.031341552734375,\n        -0.0482177734375,\n        0.0132598876953125,\n        0.0301361083984375,\n        0.0308380126953125,\n        0.040313720703125,\n        -0.05718994140625,\n        -0.01412200927734375,\n        -0.0020122528076171875,\n        -0.004199981689453125,\n        -0.0013780593872070312,\n        0.01438140869140625,\n        -0.00473785400390625,\n        0.0482177734375,\n        -0.0157623291015625,\n        0.01386260986328125,\n        -0.0389404296875,\n        -0.0716552734375,\n        0.002056121826171875,\n        0.0052337646484375,\n        -0.042877197265625,\n        0.02032470703125,\n        -0.01593017578125,\n        0.0169677734375,\n        -0.03204345703125,\n        0.037017822265625,\n        0.0015716552734375,\n        0.005596160888671875,\n        -0.051666259765625,\n        0.00930023193359375,\n        -0.0223846435546875,\n        0.05029296875,\n        0.0234222412109375,\n        -0.01222991943359375,\n        0.04443359375,\n        -0.0084381103515625,\n        0.005340576171875,\n        -0.03668212890625,\n        0.016021728515625,\n        -0.04925537109375,\n        0.0216217041015625,\n        -0.0435791015625,\n        -0.0230865478515625,\n        -0.007320404052734375,\n        0.017913818359375,\n        0.00775146484375,\n        -0.0117950439453125,\n        0.06097412109375,\n        -0.007106781005859375,\n        -0.044097900390625,\n        0.017059326171875,\n        0.0211029052734375,\n        -0.0733642578125,\n        0.0289306640625,\n        -0.006198883056640625,\n        -0.040130615234375,\n        0.006114959716796875,\n        0.01102447509765625,\n        0.0244598388671875,\n        0.04254150390625,\n        0.0182647705078125,\n        0.0167999267578125,\n        0.0158538818359375,\n        -0.0184326171875,\n        0.0239410400390625,\n        0.031707763671875,\n        0.006198883056640625,\n        0.039276123046875,\n        -0.007965087890625,\n        -0.00714874267578125,\n        -0.0850830078125,\n        0.03497314453125,\n        -0.0038967132568359375,\n        -0.06341552734375,\n        0.002971649169921875,\n        0.0540771484375,\n        0.057861328125,\n        0.0014314651489257812,\n        0.048583984375,\n        0.05133056640625,\n        0.03668212890625,\n        -0.0028858184814453125,\n        -0.0166168212890625,\n        -0.0142974853515625,\n        0.0128326416015625,\n        0.045806884765625,\n        0.00518798828125,\n        -0.055450439453125,\n        0.03753662109375,\n        0.07476806640625,\n        -0.017913818359375,\n        -0.033935546875,\n        0.0013189315795898438,\n        -0.04254150390625,\n        0.00736236572265625,\n        0.036346435546875,\n        0.0406494140625,\n        -0.036529541015625,\n        0.0185089111328125,\n        0.029632568359375,\n        0.0192108154296875,\n        -0.0201568603515625,\n        -0.00981903076171875,\n        -0.0109405517578125,\n        0.03582763671875,\n        -0.0657958984375,\n        0.0108489990234375,\n        -0.01071929931640625,\n        0.026702880859375,\n        -0.0273895263671875,\n        -0.046844482421875,\n        -0.0156707763671875,\n        0.026702880859375,\n        0.0219573974609375,\n        -0.032562255859375,\n        -0.026702880859375,\n        0.0018301010131835938,\n        0.0177459716796875,\n        0.004024505615234375,\n        0.036865234375,\n        -0.01369476318359375,\n        0.045135498046875,\n        -0.006374359130859375,\n        -0.05340576171875,\n        0.00848388671875,\n        0.0147247314453125,\n        0.0192108154296875,\n        -0.006504058837890625,\n        -0.02911376953125,\n        -0.0301361083984375,\n        -0.0176544189453125,\n        0.033935546875,\n        0.023773193359375,\n        0.038238525390625,\n        -0.004650115966796875,\n        -0.049957275390625,\n        -0.0148162841796875,\n        -0.002422332763671875,\n        0.05303955078125,\n        0.02410888671875,\n        -0.020416259765625,\n        0.017822265625,\n        -0.0123138427734375,\n        0.055816650390625,\n        0.0148162841796875,\n        0.010467529296875,\n        0.047882080078125,\n        -0.0406494140625,\n        0.01532745361328125,\n        -0.03875732421875,\n        0.00047087669372558594,\n        -0.00542449951171875,\n        -0.0239410400390625,\n        -0.01558685302734375,\n        -0.017486572265625,\n        0.01300811767578125,\n        -0.00736236572265625,\n        -0.0318603515625,\n        -0.05133056640625,\n        0.016021728515625,\n        -0.017822265625,\n        -0.0072784423828125,\n        0.00594329833984375,\n        -0.01071929931640625,\n        -0.0015935897827148438,\n        -0.05340576171875,\n        0.07232666015625,\n        0.029449462890625,\n        0.040985107421875,\n        -0.00839996337890625,\n        -0.0230865478515625,\n        0.0171356201171875,\n        -0.0347900390625,\n        -0.02410888671875,\n        0.045135498046875,\n        0.0220489501953125,\n        0.01154327392578125,\n        0.0156707763671875,\n        0.0125732421875,\n        -0.045135498046875,\n        0.031341552734375,\n        -0.0172271728515625,\n        -0.06683349609375,\n        -0.007232666015625,\n        0.0220489501953125,\n        0.045806884765625,\n        -0.00981903076171875,\n        -0.022216796875,\n        -0.0058135986328125,\n        -0.05340576171875,\n        0.043243408203125,\n        0.0196380615234375,\n        -0.01739501953125,\n        0.0166168212890625,\n        0.01395416259765625,\n        0.039794921875,\n        -0.01343536376953125,\n        0.06268310546875,\n        -0.055816650390625,\n        0.0239410400390625,\n        0.00662994384765625,\n        0.014556884765625,\n        -0.033935546875,\n        0.0020351409912109375,\n        0.0142974853515625,\n        0.029632568359375,\n        -0.02996826171875,\n        0.023773193359375,\n        -0.0167999267578125,\n        0.00078582763671875,\n        -0.0155029296875,\n        -0.0273895263671875,\n        -0.005146026611328125,\n        0.00408935546875,\n        0.0175628662109375,\n        -0.01971435546875,\n        -0.041351318359375,\n        -0.0104217529296875,\n        0.01947021484375,\n        0.0082244873046875,\n        -0.0118865966796875,\n        0.0523681640625,\n        -0.0186920166015625,\n        0.00701904296875,\n        -0.003143310546875,\n        0.0244598388671875\n    ],\n    \"embeddingModel\": \"mistral-embed\",\n    \"embeddingDimension\": 3,\n    \"sourceFilename\": \"resume.pdf\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/v1/resume/store",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "v1",
+                "resume",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "uploadIngestionFlow",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "type": "file",
+              "key": "file",
+              "src": "/E:/GENAI/Week9-Best-Practices/Resumes/Resumes/C-Priyanka QA Automation resume.pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/v1/resume/upload?sync=true",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "v1",
+            "resume",
+            "upload"
+          ],
+          "query": [
+            {
+              "key": "sync",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "IngestionQueued",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "type": "file",
+              "key": "file",
+              "src": "/E:/GENAI/Week9-Best-Practices/Resumes/Resumes/VigneshwaranC_Java.pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/v1/resume/upload",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "v1",
+            "resume",
+            "upload"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ingestionStatus",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/v1/resume/status/7b061e2e-3356-4557-925d-e862bd50a8ec",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "v1",
+            "resume",
+            "status",
+            "7b061e2e-3356-4557-925d-e862bd50a8ec"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "uploadBatch",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
